@@ -10,7 +10,8 @@ namespace SharkTracker.Data
 {
     public class Tag
     {
-        [Required]
+        [Key,Required]
+        
         public int TagNumber { get; set; }
 
         [Required]    
@@ -22,5 +23,7 @@ namespace SharkTracker.Data
         [ForeignKey(nameof(shark)),Required]
         public int SharkId { get; set; }
         public virtual Shark shark { get; set; }
+
+        public virtual ICollection<Shark> Sharks { get; set; }
     }
 }

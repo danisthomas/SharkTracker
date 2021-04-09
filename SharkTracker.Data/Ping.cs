@@ -10,23 +10,24 @@ namespace SharkTracker.Data
 {
    public class Ping
     {
-        [Required]
+        
         public int PingId { get; set; }
 
         [Required]
         public string PingLocation { get; set; }
 
-        [ForeignKey(nameof(tag)),Required]
+        [Key, Column(Order =0)]
         public int TagNumber { get; set; }
-        public virtual Tag tag { get; set; }
-
-
-        [ForeignKey(nameof(shark)),Required]
+       
+        [Key,Column(Order =1)]
         public int SharkId { get; set; }
-        public virtual Shark shark { get; set; }
-
+        
 
         [Required]
         public DateTime dateTime { get; set; }
+
+        public virtual ICollection<Shark> sharks { get; set; }
+
+        public virtual ICollection<Tag> tags { get; set; }
     }
 }

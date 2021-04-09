@@ -9,7 +9,7 @@ namespace SharkTracker.Data
 {
     public class Shark
     {
-       [Required]
+       [Key,Required]
         public int SharkId { get; set; }
 
         [Required]
@@ -31,6 +31,8 @@ namespace SharkTracker.Data
         public string SharkName { get; set; }
 
         public enum Age { YoungOfTheYear=1, Juvenile=2,SubAdult=3,Adult=4 }
+
+        public virtual Tag Tag { get; set; }
 
     }
 }

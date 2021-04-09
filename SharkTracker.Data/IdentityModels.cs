@@ -42,7 +42,14 @@ namespace SharkTracker.Data
 
             modelBuilder.Configurations.Add(new IdentityUserLoginConfiguration())
                 .Add(new IdentityuserRoleConfiguration());
+
+            //modelBuilder.Entity<Ping>()
+            // .HasKey(o => new { o.SharkId, o.TagNumber });
+
+            
         }
+
+       
     }
     public class IdentityUserLoginConfiguration : EntityTypeConfiguration<IdentityUserLogin>
     {
