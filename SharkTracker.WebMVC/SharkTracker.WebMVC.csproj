@@ -238,6 +238,8 @@
     <Content Include="Views\Shark\Index.cshtml" />
     <Content Include="Views\Shark\Create.cshtml" />
     <Content Include="Views\Shark\Details.cshtml" />
+    <Content Include="Views\Shark\Edit.cshtml" />
+    <Content Include="Views\Shark\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

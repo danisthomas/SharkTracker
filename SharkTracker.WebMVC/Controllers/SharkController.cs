@@ -69,6 +69,7 @@ namespace SharkTracker.WebMVC.Controllers
 
             var model = new SharkEdit
             {
+                SharkId = detail.SharkId,
                 SharkName = detail.SharkName,
                 Species = detail.Species,
                 Length = detail.Length,
@@ -79,6 +80,51 @@ namespace SharkTracker.WebMVC.Controllers
             return View(model);
 
         }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit(int id, SharkEdit model)
+        {
+            if (!ModelState.IsValid) return View(model);
+            if(model.SharkId != id)
+            {
+                ModelState.AddModelError("", "Id Mismatch");
+                return View(model);
+            }
+            var service = CreateSharkService();
+            if (service.UpdateShark(model))
+            {
+                TempData["SaveResult"] = "Your Shark was updated.";
+                return RedirectToAction("Index");
+            }
+
+            ModelState.AddModelError("", "Your Shark could not be updated.");
+
+
+            return View(model);
+        }
+
+        public ActionResult Delete(int id)
+        {
+            var svc = CreateSharkService();
+            var model = svc.GetSharkById(id);
+
+            return View(model);
+        }
+
+        [HttpPost]
+        [ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeletePost(int id)
+        {
+            var service = CreateSharkService();
+            service.DeleteShark(id);
+
+            TempData["SaveResult"] = "Your shark was deleted.";
+            return RedirectToAction("Index");
+        }
+
+
     }
 
 }

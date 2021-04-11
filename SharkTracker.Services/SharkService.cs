@@ -93,5 +93,17 @@ namespace SharkTracker.Services
 
             }
         }
+
+        public bool DeleteShark(int sharkId)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity = ctx.Sharks.Single(e => e.SharkId == sharkId && e.OwnerId == _userId);
+
+                ctx.Sharks.Remove(entity);
+
+                return ctx.SaveChanges() == 1;
+            }
+        }
     }
 }
