@@ -8,20 +8,31 @@ using System.Threading.Tasks;
 
 namespace SharkTracker.Models
 {
-    public class SharkListItem
+   public class SharkCreate
     {
-        public int SharkId { get; set; }
+     
 
+        [Required]
+        [MinLength(2, ErrorMessage ="Please enter at least 2 Characters.")]
+        [MaxLength(100, ErrorMessage ="There are too many characters in this field.")]
         public string SharkName { get; set; }
-        public Species Species { get; set; }
-        [Display(Name = "Length in Feet")]
-        public int Length { get; set; }
-        public Gender  Sex { get; set; }
 
-        [Display(Name = "Weight in Lbs")]
+        [Required]
+        public Species Species { get; set; }
+
+        [Required]
+        public int Length { get; set; }
+
+        [Required]
+        public Gender Sex { get; set; }
+
+        [Required]
         public int Weight { get; set; }
-       
+
+        [Required]
         public Age Age { get; set; }
+        
         public virtual Tag Tag { get; set; }
+
     }
 }

@@ -7,6 +7,10 @@ using System.Threading.Tasks;
 
 namespace SharkTracker.Data
 {
+    public enum Species {GreatWhite, Tiger, Mako }
+    public enum Gender {Male, Female }
+
+    public enum Age { YoungOfTheYear, Juvenile, SubAdult, Adult }
     public class Shark
     {
        [Key,Required]
@@ -16,13 +20,13 @@ namespace SharkTracker.Data
         public Guid OwnerId { get; set; }
 
         
-        public enum Species { GreatWhite=1,Tiger=2,Mako=3 }
+        public Species Species { get; set; }
 
         [Required] 
         public int Length { get; set; }
 
        
-        public enum Sex { Female=1,Male=2 }
+        public Gender  Sex { get; set; }
 
         [Required]
         public int Weight { get; set; }
@@ -30,7 +34,7 @@ namespace SharkTracker.Data
         [Required]
         public string SharkName { get; set; }
 
-        public enum Age { YoungOfTheYear=1, Juvenile=2,SubAdult=3,Adult=4 }
+        public Age Age { get; set; }
 
         public virtual Tag Tag { get; set; }
 

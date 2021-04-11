@@ -55,6 +55,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SharkCreate.cs" />
+    <Compile Include="SharkDetail.cs" />
     <Compile Include="SharkListItem.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -55,10 +55,21 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SharkService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SharkTracker.Data\SharkTracker.Data.csproj">
+      <Project>{f28a3349-a63c-487a-8f93-a9a0eeeb5911}</Project>
+      <Name>SharkTracker.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SharkTracker.Models\SharkTracker.Models.csproj">
+      <Project>{46bde15f-1325-4df6-96bc-aba3ecaabca9}</Project>
+      <Name>SharkTracker.Models</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

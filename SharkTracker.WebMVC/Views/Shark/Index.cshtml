@@ -9,10 +9,25 @@
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
+
+@if (TempData.ContainsKey("SaveResult"))
+{<div class="alert alert-success fade in" role="alert">
+    @ViewBag.SaveResult
+    <button type="button" class="close" data-dismiss="alert">
+        <span>&times;</span>
+    </button>
+    @TempData["SaveResult"]
+</div>}
 <table class="table">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.SharkId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SharkName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model  => model.Species)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Length)
@@ -21,8 +36,12 @@
             @Html.DisplayNameFor(model => model.Weight)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.SharkName)
+            @Html.DisplayNameFor(model => model.Sex)
         </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Age)
+        </th>
+
         <th></th>
     </tr>
 
@@ -32,13 +51,22 @@
             @Html.DisplayFor(modelItem => item.SharkId)
         </td>
         <td>
+            @Html.DisplayFor(modelItem => item.SharkName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Species)
+        </td>
+        <td>
             @Html.DisplayFor(modelItem => item.Length)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Weight)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.SharkName)
+            @Html.DisplayFor(modelItem => item.Sex)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Age)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |

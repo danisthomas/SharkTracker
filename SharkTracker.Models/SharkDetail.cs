@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace SharkTracker.Models
 {
-    public class SharkListItem
+    public class SharkDetail
     {
         public int SharkId { get; set; }
 
@@ -16,12 +16,13 @@ namespace SharkTracker.Models
         public Species Species { get; set; }
         [Display(Name = "Length in Feet")]
         public int Length { get; set; }
-        public Gender  Sex { get; set; }
+        public Gender Sex { get; set; }
 
         [Display(Name = "Weight in Lbs")]
         public int Weight { get; set; }
-       
+
         public Age Age { get; set; }
-        public virtual Tag Tag { get; set; }
+       
+
     }
 }
