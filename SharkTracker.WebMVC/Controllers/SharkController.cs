@@ -61,6 +61,24 @@ namespace SharkTracker.WebMVC.Controllers
 
             return View(model);
         }
+
+        public ActionResult Edit(int id)
+        {
+            var service = CreateSharkService();
+            var detail = service.GetSharkById(id);
+
+            var model = new SharkEdit
+            {
+                SharkName = detail.SharkName,
+                Species = detail.Species,
+                Length = detail.Length,
+                Weight = detail.Weight,
+                Sex = detail.Sex,
+                Age = detail.Age,
+            };
+            return View(model);
+
+        }
     }
 
 }

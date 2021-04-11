@@ -237,6 +237,7 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Shark\Index.cshtml" />
     <Content Include="Views\Shark\Create.cshtml" />
+    <Content Include="Views\Shark\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

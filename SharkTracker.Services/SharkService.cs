@@ -75,5 +75,23 @@ namespace SharkTracker.Services
                     };
             }
         }
+
+        public bool UpdateShark(SharkEdit model)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity = ctx.Sharks.Single(e => e.SharkId == model.SharkId && e.OwnerId == _userId);
+
+                entity.SharkName = model.SharkName;
+                entity.Species = model.Species;
+                entity.Length = model.Length;
+                entity.Sex = model.Sex;
+                entity.Weight = model.Weight;
+                entity.Age = model.Age;
+
+                return ctx.SaveChanges() == 1;
+
+            }
+        }
     }
 }
