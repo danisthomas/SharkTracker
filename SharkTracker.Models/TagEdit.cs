@@ -11,6 +11,8 @@ namespace SharkTracker.Models
 {
     public class TagEdit
     {
+        public int TagNumber { get; set; }
+
         [Required]
         public string TagLocation { get; set; }
 

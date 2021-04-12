@@ -14,6 +14,10 @@ namespace SharkTracker.Data
         
         public int TagNumber { get; set; }
 
+        [Required]
+        public Guid OwnerId { get; set; }
+
+
         [Required]    
         public string TagLocation { get; set; }
 

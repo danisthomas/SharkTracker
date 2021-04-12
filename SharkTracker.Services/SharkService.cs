@@ -50,8 +50,8 @@ namespace SharkTracker.Services
                         Length = e.Length,
                         Sex = e.Sex,
                         Weight = e.Weight,
-                        Age = e.Age,
-                    });;
+                        Age = e.Age
+                    });
                 return query.ToArray();
             }
         }

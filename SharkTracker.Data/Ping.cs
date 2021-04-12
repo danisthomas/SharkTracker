@@ -10,7 +10,10 @@ namespace SharkTracker.Data
 {
    public class Ping
     {
-        
+        [Required]
+        public Guid OwnerId { get; set; }
+
+
         public int PingId { get; set; }
 
         [Required]
