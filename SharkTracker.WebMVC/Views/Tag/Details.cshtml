@@ -1,0 +1,50 @@
+﻿@model SharkTracker.Models.TagDetail
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>TagDetail</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.TagNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TagNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TagLocation)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TagLocation)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TagDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TagDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SharkId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SharkId)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.TagNumber }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

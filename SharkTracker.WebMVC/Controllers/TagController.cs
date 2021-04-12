@@ -9,15 +9,14 @@ using System.Web.Mvc;
 
 namespace SharkTracker.WebMVC.Controllers
 {
-    [Authorize]
-    public class SharkController : Controller
+    public class TagController : Controller
     {
-        // GET: Shark
+        // GET: Tag
         public ActionResult Index()
         {
             var userId = Guid.Parse(User.Identity.GetUserId());
-            var service = new SharkService(userId);
-            var model = service.GetSharks();
+            var service = new TagService(userId);
+            var model = service.GetTags();
             return View(model);
         }
 
@@ -29,85 +28,79 @@ namespace SharkTracker.WebMVC.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(SharkCreate model)
+
+        public ActionResult Create(TagCreate model)
         {
             if (!ModelState.IsValid) return View(model);
+            var service = CreateTagService();
 
-            var service = CreateSharkService();
-
-            if (service.CreateShark(model))
+            if (service.CreateTag(model))
             {
-                TempData["SaveResult"] = "Your Shark was Created.";
+                TempData["SaveResult"] = "Your Tag was Created.";
                 return RedirectToAction("Index");
             };
 
-            ModelState.AddModelError("", "Shark could not be created.");
+            ModelState.AddModelError("", "Tag could not be created.");
 
             return View(model);
-
         }
 
-        private SharkService CreateSharkService()
+        private TagService CreateTagService()
         {
             var userId = Guid.Parse(User.Identity.GetUserId());
-            var service = new SharkService(userId);
+            var service = new TagService(userId);
             return service;
         }
 
         public ActionResult Details(int id)
         {
-            var svc = CreateSharkService();
-            var model = svc.GetSharkById(id);
+            var svc = CreateTagService();
+            var model = svc.GetTagById(id);
 
             return View(model);
         }
 
         public ActionResult Edit(int id)
         {
-            var service = CreateSharkService();
-            var detail = service.GetSharkById(id);
+            var service = CreateTagService();
+            var detail = service.GetTagById(id);
 
-            var model = new SharkEdit
+            var model = new TagEdit
             {
-                SharkId = detail.SharkId,
-                SharkName = detail.SharkName,
-                Species = detail.Species,
-                Length = detail.Length,
-                Weight = detail.Weight,
-                Sex = detail.Sex,
-                Age = detail.Age,
+                TagNumber = detail.TagNumber,
+                TagDate = detail.TagDate,
+                TagLocation = detail.TagLocation,
+                SharkId = detail.SharkId
             };
             return View(model);
-
         }
-
+        
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, SharkEdit model)
+        public ActionResult Edit(int id, TagEdit model)
         {
             if (!ModelState.IsValid) return View(model);
-            if(model.SharkId != id)
+            if(model.TagNumber != id)
             {
                 ModelState.AddModelError("", "Id Mismatch");
                 return View(model);
             }
-            var service = CreateSharkService();
-            if (service.UpdateShark(model))
+            var service = CreateTagService();
+            if (service.UpdateTag(model))
             {
-                TempData["SaveResult"] = "Your Shark was updated.";
+                TempData["SaveResult"] = "Your Tag was updated.";
                 return RedirectToAction("Index");
             }
 
-            ModelState.AddModelError("", "Your Shark could not be updated.");
-
+            ModelState.AddModelError("", "Your Tag could not be updated.");
 
             return View(model);
         }
 
         public ActionResult Delete(int id)
         {
-            var svc = CreateSharkService();
-            var model = svc.GetSharkById(id);
+            var svc = CreateTagService();
+            var model = svc.GetTagById(id);
 
             return View(model);
         }
@@ -117,14 +110,11 @@ namespace SharkTracker.WebMVC.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeletePost(int id)
         {
-            var service = CreateSharkService();
-            service.DeleteShark(id);
+            var service = CreateTagService();
+            service.DeleteTag(id);
 
-            TempData["SaveResult"] = "Your shark was deleted.";
+            TempData["SaveResult"] = "Your Tag was deleted.";
             return RedirectToAction("Index");
         }
-
-
     }
-
 }

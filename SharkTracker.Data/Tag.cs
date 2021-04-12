@@ -28,6 +28,6 @@ namespace SharkTracker.Data
         public int SharkId { get; set; }
         public virtual Shark shark { get; set; }
 
-        public virtual ICollection<Shark> Sharks { get; set; }
+        //public virtual ICollection<Shark> Sharks { get; set; }
     }
 }
