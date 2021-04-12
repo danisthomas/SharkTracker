@@ -54,6 +54,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="PingCreate.cs" />
+    <Compile Include="PingDetail.cs" />
+    <Compile Include="PingEdit.cs" />
+    <Compile Include="PingListItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SharkCreate.cs" />
     <Compile Include="SharkDetail.cs" />

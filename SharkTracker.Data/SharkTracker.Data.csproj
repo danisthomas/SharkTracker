@@ -55,6 +55,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="IdentityModels.cs" />
+    <Compile Include="Migrations\202104111629314_InitialCreate.cs" />
+    <Compile Include="Migrations\202104111629314_InitialCreate.Designer.cs">
+      <DependentUpon>202104111629314_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202104121428558_change name on Datetime prop.cs" />
+    <Compile Include="Migrations\202104121428558_change name on Datetime prop.Designer.cs">
+      <DependentUpon>202104121428558_change name on Datetime prop.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Ping.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Shark.cs" />
@@ -63,6 +72,14 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202104111629314_InitialCreate.resx">
+      <DependentUpon>202104111629314_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104121428558_change name on Datetime prop.resx">
+      <DependentUpon>202104121428558_change name on Datetime prop.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

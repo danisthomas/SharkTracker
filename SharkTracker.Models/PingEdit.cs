@@ -6,28 +6,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SharkTracker.Data
+namespace SharkTracker.Models
 {
-   public class Ping
+    public class PingEdit
     {
-        
         public int PingId { get; set; }
-
-        [Required]
+       
         public string PingLocation { get; set; }
 
-        [Key, Column(Order =0)]
+        [Key, Column(Order = 0)]
         public int TagNumber { get; set; }
-       
-        [Key,Column(Order =1)]
+
+        [Key, Column(Order = 1)]
         public int SharkId { get; set; }
-        
 
-        [Required]
         public DateTime PingDateTime { get; set; }
-
-        public virtual ICollection<Shark> sharks { get; set; }
-
-        public virtual ICollection<Tag> tags { get; set; }
     }
 }
