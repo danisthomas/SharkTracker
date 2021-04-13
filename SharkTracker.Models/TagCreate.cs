@@ -22,6 +22,6 @@ namespace SharkTracker.Models
 
        // [ForeignKey(nameof(shark)), Required]
         public int SharkId { get; set; }
-       // public virtual Shark shark { get; set; }
+        public virtual Shark shark { get; set; }
     }
 }

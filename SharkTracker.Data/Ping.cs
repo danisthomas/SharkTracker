@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace SharkTracker.Data
 {
-   public class Ping
+    public class Ping
     {
         [Required]
         public Guid OwnerId { get; set; }
@@ -19,12 +19,12 @@ namespace SharkTracker.Data
         [Required]
         public string PingLocation { get; set; }
 
-        [Key, Column(Order =0)]
+        [Key, Column(Order = 0)]
         public int TagNumber { get; set; }
-       
-        [Key,Column(Order =1)]
+
+        [Key, Column(Order = 1)]
         public int SharkId { get; set; }
-        
+
 
         [Required]
         public DateTime PingDateTime { get; set; }
