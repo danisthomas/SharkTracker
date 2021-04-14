@@ -37,7 +37,6 @@ namespace SharkTracker.Data
         [Required]
         public Age Age { get; set; }
 
-        //public virtual Tag Tag { get; set; }
-
+        
     }
 }
