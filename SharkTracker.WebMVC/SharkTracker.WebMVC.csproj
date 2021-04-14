@@ -170,6 +170,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\PingController.cs" />
     <Compile Include="Controllers\SharkController.cs" />
     <Compile Include="Controllers\TagController.cs" />
     <Compile Include="Global.asax.cs">
@@ -246,6 +247,10 @@
     <Content Include="Views\Tag\Details.cshtml" />
     <Content Include="Views\Tag\Edit.cshtml" />
     <Content Include="Views\Tag\Delete.cshtml" />
+    <Content Include="Views\Ping\Index.cshtml" />
+    <Content Include="Views\Ping\Create.cshtml" />
+    <Content Include="Views\Ping\Detail.cshtml" />
+    <Content Include="Views\Ping\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -1,0 +1,58 @@
+﻿@model SharkTracker.Models.PingDetail
+
+@{
+    ViewBag.Title = "Detail";
+}
+
+<h2>Detail</h2>
+
+<div>
+    <h4>PingDetail</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.PingId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PingId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PingLocation)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PingLocation)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TagNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TagNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SharkId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SharkId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PingDateTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PingDateTime)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new {id = Model.PingId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

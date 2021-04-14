@@ -20,7 +20,7 @@ namespace SharkTracker.Models
         [Required]
         public DateTime TagDate { get; set; }
 
-       // [ForeignKey(nameof(shark)), Required]
+        [ForeignKey(nameof(shark)), Required]
         public int SharkId { get; set; }
         public virtual Shark shark { get; set; }
     }

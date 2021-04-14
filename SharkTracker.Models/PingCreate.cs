@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SharkTracker.Data;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -15,12 +16,13 @@ namespace SharkTracker.Models
         [Required]
         public string PingLocation { get; set; }
 
-        [Key, Column(Order = 0)]
+        [ForeignKey(nameof(tag)),Required]
         public int TagNumber { get; set; }
-
-        [Key, Column(Order = 1)]
+        public virtual Tag tag { get; set; }
+       
+        [ForeignKey(nameof(shark)),Required]
         public int SharkId { get; set; }
-
+        public virtual Shark shark { get; set; }
 
         [Required]
         public DateTime PingDateTime { get; set; }

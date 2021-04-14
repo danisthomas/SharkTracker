@@ -1,0 +1,72 @@
+﻿@model IEnumerable<SharkTracker.Models.PingListItem>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+@if (TempData.ContainsKey("SaveResult"))
+{<div class="alert alert-success fade in" role="alert">
+        @ViewBag.SaveResult
+        <button type="button" class="close" data-dismiss="alert">
+            <span>&times;</span>
+        </button>
+        @TempData["SaveResult"]
+    </div>}
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.PingId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PingLocation)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PingDateTime)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SharkId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SharkName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TagNumber)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.PingId)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.PingLocation)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.PingDateTime)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.SharkId)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.SharkName)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.TagNumber)
+    </td>
+    <td>
+        @Html.ActionLink("Edit", "Edit", new {id=item.PingId }) |
+        @Html.ActionLink("Details", "Details", new { id = item.PingId }) |
+        @Html.ActionLink("Delete", "Delete", new { id = item.PingId})
+    </td>
+</tr>
+    }
+
+</table>
