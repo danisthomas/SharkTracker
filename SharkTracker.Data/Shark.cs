@@ -19,13 +19,13 @@ namespace SharkTracker.Data
         [Required]
         public Guid OwnerId { get; set; }
 
-        
+        [Required]
         public Species Species { get; set; }
 
         [Required] 
         public int Length { get; set; }
 
-       
+        [Required]
         public Gender  Sex { get; set; }
 
         [Required]
@@ -34,9 +34,10 @@ namespace SharkTracker.Data
         [Required]
         public string SharkName { get; set; }
 
+        [Required]
         public Age Age { get; set; }
 
-        public virtual Tag Tag { get; set; }
+        //public virtual Tag Tag { get; set; }
 
     }
 }

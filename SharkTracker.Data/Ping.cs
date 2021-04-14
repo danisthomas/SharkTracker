@@ -10,16 +10,16 @@ namespace SharkTracker.Data
 {
     public class Ping
     {
-        [Required]
-        public Guid OwnerId { get; set; }
-
         [Key]
         public int PingId { get; set; }
 
         [Required]
+        public Guid OwnerId { get; set; }
+
+        [Required]
         public string PingLocation { get; set; }
 
-       [ForeignKey(nameof(tag)), Required]
+        [ForeignKey(nameof(tag)), Required]
         public int TagNumber { get; set; }
         public virtual Tag tag { get; set; }
         

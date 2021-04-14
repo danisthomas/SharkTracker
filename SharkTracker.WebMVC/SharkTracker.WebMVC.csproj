@@ -251,6 +251,7 @@
     <Content Include="Views\Ping\Create.cshtml" />
     <Content Include="Views\Ping\Detail.cshtml" />
     <Content Include="Views\Ping\Edit.cshtml" />
+    <Content Include="Views\Ping\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
