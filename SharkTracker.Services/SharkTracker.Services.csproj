@@ -57,6 +57,7 @@
     <Compile Include="PingService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SharkService.cs" />
+    <Compile Include="SharkTagService.cs" />
     <Compile Include="TagService.cs" />
   </ItemGroup>
   <ItemGroup>

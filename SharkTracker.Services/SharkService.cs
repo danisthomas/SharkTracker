@@ -32,7 +32,7 @@ namespace SharkTracker.Services
 
             using(var ctx = new ApplicationDbContext())
             {
-                ctx.Sharks.Add(entity);
+                ctx.Shark.Add(entity);
                 return ctx.SaveChanges() == 1;
             }
         }
@@ -41,7 +41,7 @@ namespace SharkTracker.Services
         {
             using (var ctx = new ApplicationDbContext())
             {
-                var query = ctx.Sharks.Where(e => e.OwnerId == _userId)
+                var query = ctx.Shark.Where(e => e.OwnerId == _userId)
                     .Select(e => new SharkListItem
                     {
                        SharkId = e.SharkId,
@@ -60,7 +60,7 @@ namespace SharkTracker.Services
         {
             using (var ctx = new ApplicationDbContext())
             {
-                var entity = ctx.Sharks.Single(e => e.SharkId == id && e.OwnerId == _userId);
+                var entity = ctx.Shark.Single(e => e.SharkId == id && e.OwnerId == _userId);
 
                 return
                     new SharkDetail
@@ -80,7 +80,7 @@ namespace SharkTracker.Services
         {
             using (var ctx = new ApplicationDbContext())
             {
-                var entity = ctx.Sharks.Single(e => e.SharkId == model.SharkId && e.OwnerId == _userId);
+                var entity = ctx.Shark.Single(e => e.SharkId == model.SharkId && e.OwnerId == _userId);
 
                 entity.SharkName = model.SharkName;
                 entity.Species = model.Species;
@@ -98,9 +98,9 @@ namespace SharkTracker.Services
         {
             using (var ctx = new ApplicationDbContext())
             {
-                var entity = ctx.Sharks.Single(e => e.SharkId == sharkId && e.OwnerId == _userId);
+                var entity = ctx.Shark.Single(e => e.SharkId == sharkId && e.OwnerId == _userId);
 
-                ctx.Sharks.Remove(entity);
+                ctx.Shark.Remove(entity);
 
                 return ctx.SaveChanges() == 1;
             }

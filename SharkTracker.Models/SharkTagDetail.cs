@@ -10,7 +10,11 @@ using System.Threading.Tasks;
 namespace SharkTracker.Models
 {
     public class SharkTagDetail
+
+      
     {
+        public int SharkTagId { get; set; }
+
         [ForeignKey(nameof(shark))]
         public int SharkId { get; set; }
         public virtual Shark shark { get; set; }
@@ -21,7 +25,7 @@ namespace SharkTracker.Models
         public int TagId { get; set; }
         public virtual Tag tag { get; set; }
 
-        public int TagSerialNumber { get; set; }
+        public string TagSerialNumber { get; set; }
 
         [ForeignKey(nameof(location))]
         public int LocationId { get; set; }
@@ -29,8 +33,6 @@ namespace SharkTracker.Models
 
         [Display(Name ="Location Tagged")]
         public string TaggingLocation { get; set; }
-
-        public int SharkTag { get; set; }
         
         [Display(Name ="Tagging Date")]
         public DateTimeOffset  StartDate { get; set; }
