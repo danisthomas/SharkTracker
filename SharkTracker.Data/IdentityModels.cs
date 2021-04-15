@@ -32,9 +32,13 @@ namespace SharkTracker.Data
             return new ApplicationDbContext();
         }
 
-        public DbSet<Shark> Sharks { get; set; }
-        public DbSet<Tag> Tags { get; set; }
-        public DbSet<Ping> Pings { get; set; }
+        public DbSet<Shark> Shark { get; set; }
+        public DbSet<Tag> Tag { get; set; }
+        public DbSet<Ping> Ping { get; set; }
+        public DbSet<Location> Location { get; set; }
+        public DbSet<SharkTag> SharkTag { get; set; }
+
+
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
