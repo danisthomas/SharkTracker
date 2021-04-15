@@ -23,15 +23,15 @@ namespace SharkTracker.Services
             var entity = new Tag()
             {
                 OwnerId = _userId,
-                TagNumber = model.TagNumber,
-                TagLocation = model.TagLocation,
-                TagDate = model.TagDate,
-                SharkId = model.SharkId
+                TagId = model.TagId,
+                TagManufacturer = model.TagManufacturer,
+                TagModel = model.TagModel,
+                TagSerialNumber=model.TagSerialNumber
             };
 
             using (var ctx = new ApplicationDbContext())
             {
-                ctx.Tags.Add(entity);
+                ctx.Tag.Add(entity);
                 return ctx.SaveChanges() == 1;
             }
         }
@@ -40,13 +40,13 @@ namespace SharkTracker.Services
         {
             using(var ctx = new ApplicationDbContext())
             {
-                var query = ctx.Tags.Where(e => e.OwnerId == _userId)
+                var query = ctx.Tag.Where(e => e.OwnerId == _userId)
                     .Select(e => new TagListItem
                     {
-                        TagNumber = e.TagNumber,
-                        TagLocation = e.TagLocation,
-                        TagDate = e.TagDate,
-                        SharkId = e.SharkId
+                        TagId = e.TagId,
+                        TagManufacturer = e.TagManufacturer,
+                        TagSerialNumber = e.TagSerialNumber,
+                       TagModel=e.TagModel
                     });
                 return query.ToArray();
             }
@@ -58,15 +58,15 @@ namespace SharkTracker.Services
         {
             using (var ctx = new ApplicationDbContext())
             {
-                var entity = ctx.Tags.Single(e => e.TagNumber == id && e.OwnerId == _userId);
+                var entity = ctx.Tag.Single(e => e.TagId == id && e.OwnerId == _userId);
 
                 return
                     new TagDetail
                     {
-                        TagNumber = entity.TagNumber,
-                        TagDate = entity.TagDate,
-                        TagLocation = entity.TagLocation,
-                        SharkId = entity.SharkId
+                        TagId = entity.TagId,
+                        TagManufacturer = entity.TagManufacturer,
+                        TagModel = entity.TagModel,
+                        TagSerialNumber=entity.TagSerialNumber
                     };
 
             }
@@ -76,11 +76,11 @@ namespace SharkTracker.Services
         {
             using(var ctx = new ApplicationDbContext())
             {
-                var entity = ctx.Tags.Single(e => e.TagNumber == model.TagNumber && e.OwnerId == _userId);
-                entity.TagNumber = model.TagNumber;
-                entity.TagLocation = model.TagLocation;
-                entity.TagDate = model.TagDate;
-                entity.SharkId = model.SharkId;
+                var entity = ctx.Tag.Single(e => e.TagId == model.TagId && e.OwnerId == _userId);
+                entity.TagId = model.TagId;
+                entity.TagManufacturer = model.TagManufacturer;
+                entity.TagModel = model.TagModel;
+                entity.TagSerialNumber = model.TagSerialNumber;
 
                 return ctx.SaveChanges() == 1;
             }
@@ -90,9 +90,9 @@ namespace SharkTracker.Services
         {
             using(var ctx = new ApplicationDbContext())
             {
-                var entity = ctx.Tags.Single(e => e.TagNumber == tagNumber && e.OwnerId == _userId);
+                var entity = ctx.Tag.Single(e => e.TagId == tagNumber && e.OwnerId == _userId);
 
-                ctx.Tags.Remove(entity);
+                ctx.Tag.Remove(entity);
 
                 return ctx.SaveChanges() == 1;
             }

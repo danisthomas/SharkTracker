@@ -22,14 +22,13 @@ namespace SharkTracker.Services
             {
                 OwnerId = _userId,
                 PingId = model.PingId,
-                PingDateTime = model.PingDateTime,
                 PingLocation = model.PingLocation,
-                SharkId = model.SharkId,
-                TagNumber = model.TagNumber
+                SharkTagId = model.SharkTagId,
+                PingDate = model.PingDate
             };
             using (var ctx = new ApplicationDbContext())
             {
-                ctx.Pings.Add(entity);
+                ctx.Ping.Add(entity);
                 return ctx.SaveChanges() == 1;
             }
         }
@@ -38,14 +37,14 @@ namespace SharkTracker.Services
         {
             using (var ctx = new ApplicationDbContext())
             {
-                var query = ctx.Pings.Where(e => e.OwnerId == _userId)
+                var query = ctx.Ping.Where(e => e.OwnerId == _userId)
                     .Select(e => new PingListItem
                     {
                         PingId = e.PingId,
-                        PingDateTime = e.PingDateTime,
+                        PingDate = e.PingDate,
                         PingLocation = e.PingLocation,
-                        SharkId = e.SharkId,
-                        TagNumber = e.TagNumber
+                        SharkTagId = e.SharkTagId,
+                        
                     });
                 return query.ToArray();
             }
@@ -55,15 +54,15 @@ namespace SharkTracker.Services
         {
             using (var ctx = new ApplicationDbContext()) 
             {
-                var entity = ctx.Pings.Single(e => e.PingId == id && e.OwnerId == _userId);
+                var entity = ctx.Ping.Single(e => e.PingId == id && e.OwnerId == _userId);
                 return
                     new PingDetail
                     {
                         PingId = entity.PingId,
-                        PingDateTime = entity.PingDateTime,
+                        PingDate = entity.PingDate,
                         PingLocation = entity.PingLocation,
-                        SharkId = entity.SharkId,
-                        TagNumber = entity.TagNumber
+                        SharkTagId = entity.SharkTagId,
+                        
                     };
             }
         }
@@ -72,12 +71,11 @@ namespace SharkTracker.Services
         {
             using(var ctx = new ApplicationDbContext())
             {
-                var entity = ctx.Pings.Single(e => e.PingId == model.PingId && e.OwnerId == _userId);
-                entity.PingDateTime = model.PingDateTime;
+                var entity = ctx.Ping.Single(e => e.PingId == model.PingId && e.OwnerId == _userId);
+                entity.PingDate = model.PingDate;
                 entity.PingLocation = model.PingLocation;
-                entity.SharkId = model.SharkId;
-                entity.TagNumber = model.TagNumber;
-
+                entity.SharkTagId = model.SharkTagId;
+               
                 return ctx.SaveChanges() == 1;  
             }
         }
@@ -86,8 +84,8 @@ namespace SharkTracker.Services
         {
             using (var ctx = new ApplicationDbContext())
             {
-                var entity = ctx.Pings.Single(e => e.PingId == PingId && e.OwnerId == _userId);
-                ctx.Pings.Remove(entity);
+                var entity = ctx.Ping.Single(e => e.PingId == PingId && e.OwnerId == _userId);
+                ctx.Ping.Remove(entity);
                 return ctx.SaveChanges() == 1;
             }
 

@@ -17,7 +17,7 @@ namespace SharkTracker.Models
         public string PingLocation { get; set; }
         
         [Required,Display(Name ="Ping Date and Time")]
-        public DateTime PingDateTime { get; set; }
+        public DateTime PingDate { get; set; }
 
         [ForeignKey(nameof(sharkTag)), Required]
         public int SharkTagId { get; set; }

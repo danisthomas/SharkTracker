@@ -11,16 +11,15 @@ namespace SharkTracker.Models
 {
    public class TagListItem
     {
-        public int TagNumber { get; set; }
+       
+        public int TagId { get; set; }
 
-        [Required]
-        public string TagLocation { get; set; }
+        
+        public string TagManufacturer { get; set; }
 
-        [Required]
-        public DateTime TagDate { get; set; }
+       
+        public string TagModel { get; set; }
 
-        [ForeignKey(nameof(shark)), Required]
-        public int SharkId { get; set; }
-        public virtual Shark shark { get; set; }
+        public string TagSerialNumber { get; set; }
     }
 }

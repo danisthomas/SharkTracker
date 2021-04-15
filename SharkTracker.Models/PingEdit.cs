@@ -15,13 +15,9 @@ namespace SharkTracker.Models
        
         public string PingLocation { get; set; }
 
-        [ForeignKey(nameof(tag))]
-        public int TagNumber { get; set; }
-        public virtual Tag tag { get; set; }
-
-        [ForeignKey(nameof(shark))]
-        public int SharkId { get; set; }
-        public virtual Shark shark { get; set; }
-        public DateTime PingDateTime { get; set; }
+        [ForeignKey(nameof(sharkTag))]
+        public int SharkTagId { get; set; }
+        public virtual SharkTag sharkTag { get; set; }
+        public DateTime PingDate { get; set; }
     }
 }
