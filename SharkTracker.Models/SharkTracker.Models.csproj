@@ -67,6 +67,10 @@
     <Compile Include="SharkDetail.cs" />
     <Compile Include="SharkEdit.cs" />
     <Compile Include="SharkListItem.cs" />
+    <Compile Include="SharkTagCreate.cs" />
+    <Compile Include="SharkTagDetail.cs" />
+    <Compile Include="SharkTagEdit.cs" />
+    <Compile Include="SharkTagListItem.cs" />
     <Compile Include="TagCreate.cs" />
     <Compile Include="TagDetail.cs" />
     <Compile Include="TagEdit.cs" />
