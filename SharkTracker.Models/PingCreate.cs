@@ -11,7 +11,7 @@ namespace SharkTracker.Models
 {
     public class PingCreate
     {
-        public int PingId { get; set; }
+       
 
         [Required,Display(Name ="Ping Location")]
         public string PingLocation { get; set; }

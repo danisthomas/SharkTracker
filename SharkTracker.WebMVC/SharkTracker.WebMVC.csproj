@@ -244,16 +244,6 @@
     <Content Include="Views\Shark\Details.cshtml" />
     <Content Include="Views\Shark\Edit.cshtml" />
     <Content Include="Views\Shark\Delete.cshtml" />
-    <Content Include="Views\Tag\Index.cshtml" />
-    <Content Include="Views\Tag\Create.cshtml" />
-    <Content Include="Views\Tag\Details.cshtml" />
-    <Content Include="Views\Tag\Edit.cshtml" />
-    <Content Include="Views\Tag\Delete.cshtml" />
-    <Content Include="Views\Ping\Index.cshtml" />
-    <Content Include="Views\Ping\Create.cshtml" />
-    <Content Include="Views\Ping\Detail.cshtml" />
-    <Content Include="Views\Ping\Edit.cshtml" />
-    <Content Include="Views\Ping\Delete.cshtml" />
     <Content Include="Views\SharkTag\Index.cshtml" />
     <Content Include="Views\SharkTag\Create.cshtml" />
     <Content Include="Views\SharkTag\Details.cshtml" />
@@ -264,6 +254,16 @@
     <Content Include="Views\Location\Details.cshtml" />
     <Content Include="Views\Location\Edit.cshtml" />
     <Content Include="Views\Location\Delete.cshtml" />
+    <Content Include="Views\Ping\Index.cshtml" />
+    <Content Include="Views\Ping\Create.cshtml" />
+    <Content Include="Views\Ping\Detail.cshtml" />
+    <Content Include="Views\Ping\Edit.cshtml" />
+    <Content Include="Views\Ping\Delete.cshtml" />
+    <Content Include="Views\Tag\Index.cshtml" />
+    <Content Include="Views\Tag\Create.cshtml" />
+    <Content Include="Views\Tag\Details.cshtml" />
+    <Content Include="Views\Tag\Edit.cshtml" />
+    <Content Include="Views\Tag\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

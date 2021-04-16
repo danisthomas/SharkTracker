@@ -17,6 +17,7 @@
         </button>
         @TempData["SaveResult"]
     </div>}
+
 <table class="table">
     <tr>
         <th>
@@ -26,47 +27,41 @@
             @Html.DisplayNameFor(model => model.PingLocation)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.PingDateTime)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.SharkId)
+            @Html.DisplayNameFor(model => model.SharkTagId)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.SharkName)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.TagNumber)
+            @Html.DisplayNameFor(model => model.PingDate)
         </th>
         <th></th>
     </tr>
 
     @foreach (var item in Model)
     {
-<tr>
-    <td>
-        @Html.DisplayFor(modelItem => item.PingId)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.PingLocation)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.PingDateTime)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.SharkId)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.SharkName)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.TagNumber)
-    </td>
-    <td>
-        @Html.ActionLink("Edit", "Edit", new {id=item.PingId }) |
-        @Html.ActionLink("Details", "Details", new { id = item.PingId }) |
-        @Html.ActionLink("Delete", "Delete", new { id = item.PingId})
-    </td>
-</tr>
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.PingId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PingLocation)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SharkTagId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SharkName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PingDate)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new {id=item.PingId }) |
+                @Html.ActionLink("Details", "Details", new { id = item.PingId }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.PingId })
+            </td>
+        </tr>
     }
 
 </table>

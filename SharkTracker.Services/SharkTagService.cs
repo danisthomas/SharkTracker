@@ -22,7 +22,7 @@ namespace SharkTracker.Services
             var entity = new SharkTag()
             {
                 OwnerId = _userId,
-                SharkTagId = model.SharkTagId,
+               
                 StartDate = model.StartDate,
                 SharkId = model.SharkId,
                 TagId = model.TagId,
@@ -56,6 +56,7 @@ namespace SharkTracker.Services
                         TagId=e.tag.TagId,
                         TagSerialNumber=e.tag.TagSerialNumber,
                         TaggingLocation=e.location.TaggingLocation,
+                        LocationId=e.LocationId,
                         StartDate=e.StartDate,
                         EndDate=e.EndDate
                     });

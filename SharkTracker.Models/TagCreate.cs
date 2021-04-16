@@ -11,7 +11,7 @@ namespace SharkTracker.Models
 {
     public class TagCreate
     {
-        public int TagId { get; set; }
+      
 
 
         [Required]

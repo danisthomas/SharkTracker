@@ -11,7 +11,7 @@ namespace SharkTracker.Models
 {
     public class SharkTagCreate
     {
-        public int SharkTagId { get; set; }
+       
 
         [Required, Display(Name ="Date Tag Placed")]
         public DateTimeOffset StartDate { get; set; }

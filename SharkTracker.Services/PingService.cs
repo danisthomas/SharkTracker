@@ -21,7 +21,7 @@ namespace SharkTracker.Services
             var entity = new Ping()
             {
                 OwnerId = _userId,
-                PingId = model.PingId,
+               
                 PingLocation = model.PingLocation,
                 SharkTagId = model.SharkTagId,
                 PingDate = model.PingDate

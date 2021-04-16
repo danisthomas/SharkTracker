@@ -27,32 +27,24 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.TagNumber)
+            @Html.DisplayNameFor(model => model.SharkTagId)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.TagNumber)
+            @Html.DisplayFor(model => model.SharkTagId)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.SharkId)
+            @Html.DisplayNameFor(model => model.PingDate)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.SharkId)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.PingDateTime)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.PingDateTime)
+            @Html.DisplayFor(model => model.PingDate)
         </dd>
 
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new {id = Model.PingId }) |
+    @Html.ActionLink("Edit", "Edit", new { id=Model.PingId}) |
     @Html.ActionLink("Back to List", "Index")
 </p>

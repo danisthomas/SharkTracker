@@ -23,7 +23,7 @@ namespace SharkTracker.Services
             var entity = new Tag()
             {
                 OwnerId = _userId,
-                TagId = model.TagId,
+                
                 TagManufacturer = model.TagManufacturer,
                 TagModel = model.TagModel,
                 TagSerialNumber=model.TagSerialNumber

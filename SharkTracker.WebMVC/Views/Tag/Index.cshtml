@@ -20,16 +20,16 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.TagNumber)
+            @Html.DisplayNameFor(model => model.TagId)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.TagLocation)
+            @Html.DisplayNameFor(model => model.TagManufacturer)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.TagDate)
+            @Html.DisplayNameFor(model => model.TagModel)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.SharkId)
+            @Html.DisplayNameFor(model => model.TagSerialNumber)
         </th>
         <th></th>
     </tr>
@@ -38,21 +38,21 @@
     {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.TagNumber)
+                @Html.DisplayFor(modelItem => item.TagId)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.TagLocation)
+                @Html.DisplayFor(modelItem => item.TagManufacturer)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.TagDate)
+                @Html.DisplayFor(modelItem => item.TagModel)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.SharkId)
+                @Html.DisplayFor(modelItem => item.TagSerialNumber)
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.TagNumber }) |
-                @Html.ActionLink("Details", "Details", new { id = item.TagNumber }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.TagNumber })
+                @Html.ActionLink("Edit", "Edit", new {id=item.TagId}) |
+                @Html.ActionLink("Details", "Details", new { id = item.TagId }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.TagId })
             </td>
         </tr>
     }

@@ -11,40 +11,40 @@
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.TagNumber)
+            @Html.DisplayNameFor(model => model.TagId)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.TagNumber)
+            @Html.DisplayFor(model => model.TagId)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.TagLocation)
+            @Html.DisplayNameFor(model => model.TagManufacturer)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.TagLocation)
+            @Html.DisplayFor(model => model.TagManufacturer)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.TagDate)
+            @Html.DisplayNameFor(model => model.TagModel)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.TagDate)
+            @Html.DisplayFor(model => model.TagModel)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.SharkId)
+            @Html.DisplayNameFor(model => model.TagSerialNumber)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.SharkId)
+            @Html.DisplayFor(model => model.TagSerialNumber)
         </dd>
 
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.TagNumber }) |
+    @Html.ActionLink("Edit", "Edit", new {id = Model.TagId}) |
     @Html.ActionLink("Back to List", "Index")
 </p>
