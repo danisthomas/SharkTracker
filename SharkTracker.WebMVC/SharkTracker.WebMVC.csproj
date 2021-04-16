@@ -254,11 +254,15 @@
     <Content Include="Views\Ping\Detail.cshtml" />
     <Content Include="Views\Ping\Edit.cshtml" />
     <Content Include="Views\Ping\Delete.cshtml" />
+    <Content Include="Views\SharkTag\Index.cshtml" />
+    <Content Include="Views\SharkTag\Create.cshtml" />
+    <Content Include="Views\SharkTag\Details.cshtml" />
+    <Content Include="Views\SharkTag\Edit.cshtml" />
+    <Content Include="Views\SharkTag\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Views\Location\" />
-    <Folder Include="Views\SharkTag\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

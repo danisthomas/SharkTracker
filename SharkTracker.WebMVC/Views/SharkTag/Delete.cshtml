@@ -1,0 +1,96 @@
+﻿@model SharkTracker.Models.SharkTagDetail
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>SharkTagDetail</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.SharkTagId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SharkTagId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SharkId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SharkId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SharkName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SharkName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TagId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TagId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TagSerialNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TagSerialNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LocationId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LocationId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TaggingLocation)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TaggingLocation)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.StartDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StartDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EndDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EndDate)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>
