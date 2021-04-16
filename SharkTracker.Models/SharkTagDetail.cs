@@ -19,12 +19,14 @@ namespace SharkTracker.Models
         public int SharkId { get; set; }
         public virtual Shark shark { get; set; }
 
+        [Display(Name ="Shark Name")]
         public string SharkName { get; set; }
 
         [ForeignKey(nameof(tag))]
         public int TagId { get; set; }
         public virtual Tag tag { get; set; }
 
+        [Display(Name ="Tag Serial Number")]
         public string TagSerialNumber { get; set; }
 
         [ForeignKey(nameof(location))]

@@ -85,7 +85,7 @@ namespace SharkTracker.Services
                 };
 
            }
-        }
+         }
 
         public bool UpdateSharkTag(SharkTagEdit model)
         {

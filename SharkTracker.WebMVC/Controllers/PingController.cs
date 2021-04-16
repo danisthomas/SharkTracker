@@ -67,6 +67,7 @@ namespace SharkTracker.WebMVC.Controllers
 
             var model = new PingEdit
             {
+                PingId=detail.PingId,
                 PingDate = detail.PingDate,
                 PingLocation = detail.PingLocation,
                 SharkTagId = detail.SharkTagId,

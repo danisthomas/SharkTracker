@@ -13,10 +13,10 @@ namespace SharkTracker.Models
     {
         public int SharkTagId { get; set; }
 
-        [Required]
+        [Display(Name = "Date Tag Placed")]
         public DateTimeOffset StartDate { get; set; }
 
-
+        [Display(Name = "Date Tag was Removed or Lost")]
         public DateTimeOffset? EndDate { get; set; }
 
         [ForeignKey(nameof(shark))]

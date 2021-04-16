@@ -14,12 +14,13 @@ namespace SharkTracker.Models
        
         public int TagId { get; set; }
 
-        
+        [Display(Name ="Tag Manufacturer")]
         public string TagManufacturer { get; set; }
 
-       
+       [Display(Name ="Tag Model")]
         public string TagModel { get; set; }
 
+        [Display(Name ="Tag Serial Number")]
         public string TagSerialNumber { get; set; }
     }
 }

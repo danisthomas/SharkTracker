@@ -11,8 +11,11 @@ namespace SharkTracker.Models
     public class SharkEdit
     {
         public int SharkId { get; set; }
+
+        [Display(Name ="Shark Name")]
         public string SharkName { get; set; }
         public Species Species { get; set; }
+
         [Display(Name = "Length in Feet")]
         public int Length { get; set; }
         public Gender Sex { get; set; }

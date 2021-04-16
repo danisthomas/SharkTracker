@@ -14,13 +14,13 @@ namespace SharkTracker.Models
       
 
 
-        [Required]
+        [Required,Display(Name ="Tag Manufacturer")]
         public string TagManufacturer { get; set; }
 
-        [Required]
+        [Required,Display(Name ="Tag Model")]
         public string TagModel { get; set; }
 
-        [Required]
+        [Required,Display(Name ="Tag Serial Number")]
         public string TagSerialNumber { get; set; }
     }
 }
