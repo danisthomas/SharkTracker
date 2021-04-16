@@ -67,10 +67,11 @@ namespace SharkTracker.WebMVC.Controllers
 
             var model = new TagEdit
             {
-                TagNumber = detail.TagNumber,
-                TagDate = detail.TagDate,
-                TagLocation = detail.TagLocation,
-                SharkId = detail.SharkId
+                TagId = detail.TagId,
+                TagManufacturer = detail.TagManufacturer,
+                TagModel = detail.TagModel,
+                TagSerialNumber = detail.TagSerialNumber
+                
             };
             return View(model);
         }
@@ -80,7 +81,7 @@ namespace SharkTracker.WebMVC.Controllers
         public ActionResult Edit(int id, TagEdit model)
         {
             if (!ModelState.IsValid) return View(model);
-            if(model.TagNumber != id)
+            if(model.TagId != id)
             {
                 ModelState.AddModelError("", "Id Mismatch");
                 return View(model);
