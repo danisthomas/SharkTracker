@@ -264,6 +264,7 @@
     <Content Include="Views\Tag\Details.cshtml" />
     <Content Include="Views\Tag\Edit.cshtml" />
     <Content Include="Views\Tag\Delete.cshtml" />
+    <Content Include="Views\Shark\NameDetails.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

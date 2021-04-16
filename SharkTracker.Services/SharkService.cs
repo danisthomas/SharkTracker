@@ -56,6 +56,25 @@ namespace SharkTracker.Services
             }
         }
 
+        public IEnumerable<SharkListItem> GetSharksByName(string name)
+        {
+            using(var ctx = new ApplicationDbContext())
+            {
+                var query = ctx.Shark.Where(e=> e.OwnerId == _userId && e.SharkName == name)
+                    .Select(e=> new SharkListItem
+                    {
+                        SharkId = e.SharkId,
+                        SharkName = e.SharkName,
+                        Species = e.Species,
+                        Length = e.Length,
+                        Sex = e.Sex,
+                        Weight = e.Weight,
+                        Age = e.Age
+                    });
+                return query.ToArray();
+            }
+        }
+
         public SharkDetail GetSharkById(int id)
         {
             using (var ctx = new ApplicationDbContext())

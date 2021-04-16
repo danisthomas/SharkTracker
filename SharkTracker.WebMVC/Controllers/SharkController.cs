@@ -62,6 +62,14 @@ namespace SharkTracker.WebMVC.Controllers
             return View(model);
         }
 
+        public ActionResult NameDetails(string name)
+        {
+            var svc = CreateSharkService();
+            var model = svc.GetSharksByName(name);
+
+            return View(model);
+        }
+
         public ActionResult Edit(int id)
         {
             var service = CreateSharkService();
