@@ -17,6 +17,10 @@ namespace SharkTracker.Services
             _userId = userId;
         }
 
+        public LocationService()
+        {
+        }
+
         public bool CreateLocation(LocationCreate model)
         {
             var entity = new Location()
