@@ -6,18 +6,34 @@
 
 <h2>Index</h2>
 
+
+
+@if (TempData.ContainsKey("SaveResult"))
+{<div class="alert alert-success fade in" role="alert">
+        @ViewBag.SaveResult
+        <button type="button" class="close" data-dismiss="alert">
+            <span>&times;</span>
+        </button>
+        @TempData["SaveResult"]
+    </div>}
+
+
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
 
-@if (TempData.ContainsKey("SaveResult"))
-{<div class="alert alert-success fade in" role="alert">
-    @ViewBag.SaveResult
-    <button type="button" class="close" data-dismiss="alert">
-        <span>&times;</span>
-    </button>
-    @TempData["SaveResult"]
-</div>}
+<form method="Post">
+    <div class="row-form-groups">
+        <div class="col-md-7">
+            <input asp-for="" class="form-control" id="TextSearchInput" placeholder="Enter text for full text search" />
+        </div>
+        <div class="col-md-5">
+            <button class="btn btn-success" id="ApplyTextSearchButton">Search</button>
+        </div>
+    </div>
+</form>
+
+
 <table class="table">
     <tr>
         <th>
@@ -27,7 +43,7 @@
             @Html.DisplayNameFor(model => model.SharkName)
         </th>
         <th>
-            @Html.DisplayNameFor(model  => model.Species)
+            @Html.DisplayNameFor(model => model.Species)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Length)
@@ -45,35 +61,36 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.SharkId)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.SharkName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Species)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Length)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Weight)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Sex)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Age)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new {id=item.SharkId }) |
-            @Html.ActionLink("Details", "Details", new { id = item.SharkId }) |
-            @Html.ActionLink("Delete", "Delete", new { id = item.SharkId })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.SharkId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SharkName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Species)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Length)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Weight)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Sex)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Age)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.SharkId }) |
+                @Html.ActionLink("Details", "Details", new { id = item.SharkId }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.SharkId })
+            </td>
+        </tr>
+    }
 
 </table>

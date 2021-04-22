@@ -1,4 +1,4 @@
-﻿@model SharkTracker.Models.SharkDetail
+﻿@model IEnumerable<SharkTracker.Models.SharkListItem>
 
 @{
     ViewBag.Title = "NameDetails";
@@ -6,45 +6,46 @@
 
 <h2>NameDetails</h2>
 
-<div>
-    <h4>SharkDetail</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.SharkId)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.SharkId)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.SharkName)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.SharkName)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Length)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Length)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Weight)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Weight)
-        </dd>
-
-    </dl>
-</div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new {id = Model.SharkName}) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Create New", "Create")
 </p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.SharkId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SharkName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Length)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Weight)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.SharkId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SharkName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Length)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Weight)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new {id=item.SharkName }) |
+            @Html.ActionLink("Details", "Details", new { id = item.SharkName }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.SharkName })
+        </td>
+    </tr>
+}
+
+</table>

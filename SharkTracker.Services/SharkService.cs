@@ -56,12 +56,12 @@ namespace SharkTracker.Services
             }
         }
 
-        public IEnumerable<SharkListItem> GetSharksByName(string name)
+        public IQueryable<Shark> GetSharksByName()
         {
             using(var ctx = new ApplicationDbContext())
             {
-                var query = ctx.Shark.Where(e=> e.OwnerId == _userId && e.SharkName == name)
-                    .Select(e=> new SharkListItem
+                var query = ctx.Shark.Where(e=> e.OwnerId == _userId)
+                    .Select(e=> new SharksNameSearch
                     {
                         SharkId = e.SharkId,
                         SharkName = e.SharkName,
@@ -71,7 +71,7 @@ namespace SharkTracker.Services
                         Weight = e.Weight,
                         Age = e.Age
                     });
-                return query.ToArray();
+                return (IQueryable<Shark>)query;
             }
         }
 

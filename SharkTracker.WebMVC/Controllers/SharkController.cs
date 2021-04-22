@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNet.Identity;
+﻿using Korzh.EasyQuery.Linq;
+using Microsoft.AspNet.Identity;
+using SharkTracker.Data;
 using SharkTracker.Models;
 using SharkTracker.Services;
 using System;
@@ -7,19 +9,42 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
+
 namespace SharkTracker.WebMVC.Controllers
 {
     [Authorize]
     public class SharkController : Controller
     {
         // GET: Shark
-        public ActionResult Index()
+        public ActionResult Index(SharkListItem input)
         {
-            var userId = Guid.Parse(User.Identity.GetUserId());
-            var service = new SharkService(userId);
-            var model = service.GetSharks();
-            return View(model);
+            
+                var userId = Guid.Parse(User.Identity.GetUserId());
+                var service = new SharkService(userId);
+                var model = service.GetSharks();
+
+
+                return View(model);
+            
         }
+
+        [HttpPost]
+
+        public ActionResult  Index(string Model)
+        {
+            if (!string.IsNullOrEmpty(Model))
+            {
+
+
+                var userId = Guid.Parse(User.Identity.GetUserId());
+                var service = new SharkService(userId);
+                var model = service.GetSharksByName().FullTextSearchQuery(Model);
+                return View(Model);
+            }
+            else
+                return View(Model);
+        }
+        
 
         //Get
         public ActionResult Create()
@@ -62,13 +87,7 @@ namespace SharkTracker.WebMVC.Controllers
             return View(model);
         }
 
-        public ActionResult NameDetails(string name)
-        {
-            var svc = CreateSharkService();
-            var model = svc.GetSharksByName(name);
-
-            return View(model);
-        }
+        
 
         public ActionResult Edit(int id)
         {

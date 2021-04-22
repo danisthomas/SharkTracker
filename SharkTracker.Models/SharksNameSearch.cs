@@ -8,27 +8,27 @@ using System.Threading.Tasks;
 
 namespace SharkTracker.Models
 {
-    public class SharkListItem
+    public class SharksNameSearch
     {
+      
+        public string Text { get; set; }
+
+        public IQueryable<Shark> Sharks { get; set; }
+
         public int SharkId { get; set; }
 
-        [Display(Name ="Shark Name")]
+        [Display(Name = "Shark Name")]
         public string SharkName { get; set; }
         public Species Species { get; set; }
 
         [Display(Name = "Length in Feet")]
         public int Length { get; set; }
-        public Gender  Sex { get; set; }
+        public Gender Sex { get; set; }
 
         [Display(Name = "Weight in Lbs")]
         public int Weight { get; set; }
-       
+
         public Age Age { get; set; }
-
-        public string Text { get; set; }
-
-        public IQueryable<Shark> Sharks { get; set; }
-
 
     }
 }
