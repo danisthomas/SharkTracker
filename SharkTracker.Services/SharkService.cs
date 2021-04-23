@@ -56,7 +56,14 @@ namespace SharkTracker.Services
             }
         }
 
-        
+        public IEnumerable<Shark> GetSharksList()
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                return ctx.Shark.ToList();
+            }
+        }
+
 
         public IQueryable<Shark> GetSharksByName()
         {

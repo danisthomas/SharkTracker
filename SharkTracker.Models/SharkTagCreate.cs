@@ -16,7 +16,7 @@ namespace SharkTracker.Models
         [Required, Display(Name ="Date Tag Placed")]
         public DateTimeOffset StartDate { get; set; }
 
-        [ForeignKey(nameof(shark)),Required]
+        [ForeignKey(nameof(shark)),Required,Display(Name ="Shark Name")]
         public int SharkId { get; set; }
         public virtual Shark shark { get; set; }
 
@@ -24,7 +24,7 @@ namespace SharkTracker.Models
         public int TagId { get; set; }
         public virtual Tag tag { get; set; }
 
-        [ForeignKey(nameof(location)),Required]
+        [ForeignKey(nameof(location)),Required,Display(Name ="Tagging Location")]
         public int LocationId { get; set; }
         public virtual Location location { get; set; }
 

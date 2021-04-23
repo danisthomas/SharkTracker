@@ -68,6 +68,7 @@ namespace SharkTracker.Services
         {
             using (var ctx = new ApplicationDbContext())
             {
+                
                 return ctx.SharkTag.ToList();
             }
         }

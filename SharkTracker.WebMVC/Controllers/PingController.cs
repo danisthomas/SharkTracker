@@ -27,12 +27,13 @@ namespace SharkTracker.WebMVC.Controllers
             var userId = Guid.Parse(User.Identity.GetUserId());
             var service = new SharkTagService(userId);
             List<SharkTag> sharkTags = service.GetSharkTagsList().ToList();
-
+            
             var query = from s in sharkTags
                         select new SelectListItem()
                         {
+                           
                             Value = s.SharkTagId.ToString(),
-                            Text = s.SharkTagId.ToString()
+                            Text = s.TagId.ToString()
                         };
             ViewBag.SharkTagId = query;
             return View();
@@ -76,6 +77,18 @@ namespace SharkTracker.WebMVC.Controllers
         {
             var service = CreatePingService();
             var detail = service.GetPingById(id);
+
+            var userId = Guid.Parse(User.Identity.GetUserId());
+            var sservice = new SharkTagService(userId);
+
+            List<SharkTag> SharkTags = sservice.GetSharkTagsList().ToList();
+
+            ViewBag.SharkTagId = SharkTags.Select(s => new SelectListItem()
+            {
+                Value = s.SharkTagId.ToString(),
+                Text = s.TagId.ToString(),
+                Selected = detail.SharkTagId == s.SharkTagId
+            });
 
             var model = new PingEdit
             {

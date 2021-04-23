@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNet.Identity;
+using SharkTracker.Data;
 using SharkTracker.Models;
 using SharkTracker.Services;
 using System;
@@ -22,6 +23,38 @@ namespace SharkTracker.WebMVC.Controllers
 
         public ActionResult Create()
         {
+            var userId = Guid.Parse(User.Identity.GetUserId());
+            var sservice = new SharkService(userId);
+            var tservice = new TagService(userId);
+            var lservice = new LocationService(userId);
+
+            List<Shark> sharks = sservice.GetSharksList().ToList();
+            List<Tag> Tags = tservice.GetTagsList().ToList();
+            List<Location> locations = lservice.GetLocationsList().ToList();
+
+
+
+            var query = from s in sharks
+                        select new SelectListItem()
+                        {
+                            Value = s.SharkId.ToString(),
+                            Text = s.SharkName
+                        };
+            var tquery = from t in Tags
+                        select new SelectListItem()
+                        {
+                            Value = t.TagId.ToString(),
+                            Text = t.TagId.ToString()
+                        };
+            var lquery = from l in locations
+                        select new SelectListItem()
+                        {
+                            Value = l.LocationId.ToString(),
+                            Text = l.TaggingLocation
+                        };
+            ViewBag.SharkId = query;
+            ViewBag.TagId = tquery;
+            ViewBag.LocationId = lquery;
             return View();
 
         }
@@ -63,6 +96,39 @@ namespace SharkTracker.WebMVC.Controllers
         {
             var service = CreateSharkTagService();
             var detail = service.GetSharkTagById(id);
+
+
+            var userId = Guid.Parse(User.Identity.GetUserId());
+            var sservice = new SharkService(userId);
+            var tservice = new TagService(userId);
+            var lservice = new LocationService(userId);
+
+            List<Shark> sharks = sservice.GetSharksList().ToList();
+            List<Tag> tags = tservice.GetTagsList().ToList();
+            List<Location> locations = lservice.GetLocationsList().ToList();
+
+            ViewBag.SharkId = sharks.Select(s => new SelectListItem()
+            {
+                Value = s.SharkId.ToString(),
+                Text = s.SharkName,
+                Selected = detail.SharkId == s.SharkId
+            });
+
+            ViewBag.TagId =tags.Select(t => new SelectListItem()
+            {
+                Value = t.TagId.ToString(),
+                Text =t.TagId.ToString(),
+                Selected = detail.TagId == t.TagId
+            });
+
+            ViewBag.LocationId = locations.Select(l => new SelectListItem()
+            {
+                Value = l.LocationId.ToString(),
+                Text = l.TaggingLocation,
+                Selected = detail.LocationId == l.LocationId
+            });
+
+
 
             var model = new SharkTagEdit
             {

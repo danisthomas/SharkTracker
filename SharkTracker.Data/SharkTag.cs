@@ -23,6 +23,8 @@ namespace SharkTracker.Data
         public int SharkId { get; set; }
         public virtual Shark shark { get; set; }
 
+       
+
         [ForeignKey(nameof(tag))]
         public int TagId { get; set; }
         public virtual Tag tag { get; set; }

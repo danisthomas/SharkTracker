@@ -19,7 +19,7 @@ namespace SharkTracker.Models
         [Required,Display(Name ="Ping Date and Time")]
         public DateTime PingDate { get; set; }
 
-        [ForeignKey(nameof(sharkTag)), Required]
+        [ForeignKey(nameof(sharkTag)), Required,Display(Name ="Tag Id")]
         public int SharkTagId { get; set; }
         public virtual SharkTag sharkTag { get; set; }
 

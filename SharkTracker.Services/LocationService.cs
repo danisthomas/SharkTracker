@@ -49,6 +49,13 @@ namespace SharkTracker.Services
                 return query.ToArray();
             }
         }
+        public IEnumerable<Location> GetLocationsList()
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                return ctx.Location.ToList();
+            }
+        }
 
         public LocationDetail GetLocationsById(int id)
         {
