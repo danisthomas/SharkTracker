@@ -30,19 +30,19 @@ namespace SharkTracker.WebMVC.Controllers
 
         [HttpPost]
 
-        public ActionResult  Index(string Model)
+        public ActionResult  Index(SharkListItem list , string input)
         {
-            if (!string.IsNullOrEmpty(Model))
+            if (!string.IsNullOrEmpty(input))
             {
 
 
                 var userId = Guid.Parse(User.Identity.GetUserId());
                 var service = new SharkService(userId);
-                var model = service.GetSharksByName().FullTextSearchQuery(Model);
-                return View(Model);
+                var model = service.GetSharksByName().FullTextSearchQuery(input);
+                return View(model);
             }
             else
-                return View(Model);
+                return View(list);
         }
         
 
