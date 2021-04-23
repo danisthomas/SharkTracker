@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNet.Identity;
+using SharkTracker.Data;
 using SharkTracker.Models;
 using SharkTracker.Services;
 using System;
@@ -23,6 +24,17 @@ namespace SharkTracker.WebMVC.Controllers
         //Get
         public ActionResult Create()
         {
+            var userId = Guid.Parse(User.Identity.GetUserId());
+            var service = new SharkTagService(userId);
+            List<SharkTag> sharkTags = service.GetSharkTagsList().ToList();
+
+            var query = from s in sharkTags
+                        select new SelectListItem()
+                        {
+                            Value = s.SharkTagId.ToString(),
+                            Text = s.SharkTagId.ToString()
+                        };
+            ViewBag.SharkTagId = query;
             return View();
         }
 

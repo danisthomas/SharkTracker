@@ -64,7 +64,13 @@ namespace SharkTracker.Services
                 return query.ToArray();
             }
         }
-
+        public IEnumerable<SharkTag> GetSharkTagsList()
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                return ctx.SharkTag.ToList();
+            }
+        }
         public SharkTagDetail GetSharkTagById(int id)
         {
            using(var ctx = new ApplicationDbContext())

@@ -49,6 +49,7 @@ namespace SharkTracker.WebMVC.Controllers
         //Get
         public ActionResult Create()
         {
+
             return View();
         }
 
