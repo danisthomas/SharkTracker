@@ -13,14 +13,16 @@ namespace SharkTracker.Models
     {
         public int PingId { get; set; }
 
-       
+       [Display(Name ="Ping location")]
         public string PingLocation { get; set; }
 
      
         [ForeignKey(nameof(sharkTag))]
         public int SharkTagId { get; set; }
+        [Display(Name ="Shark Name")]
         public string SharkName { get; set; }
         public virtual SharkTag sharkTag { get; set; }
+        [Display(Name ="Date of Ping")]
         public DateTime PingDate { get; set; }
     }
 }
