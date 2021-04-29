@@ -1,10 +1,13 @@
 ﻿using Microsoft.AspNet.Identity;
+using Microsoft.AspNetCore.Mvc;
 using SharkTracker.Data;
 using SharkTracker.Models;
 using SharkTracker.Services;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 
@@ -20,6 +23,8 @@ namespace SharkTracker.WebMVC.Controllers
             var model = service.GetPings();
             return View(model);
         }
+
+        
 
         //Get
         public ActionResult Create()
@@ -71,6 +76,24 @@ namespace SharkTracker.WebMVC.Controllers
             var model = svc.GetPingById(id);
 
             return View(model);
+        }
+
+        [Route("Ping/Location")]
+        public ViewResult PingLocationDetail(string location)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var svc = CreatePingService();
+                var model = svc.GetPingByPingLocation(location);
+
+                var locations = from l in ctx.Ping select l;
+                if (!string.IsNullOrWhiteSpace(location))
+                {
+                    locations = locations.Where(l => l.PingLocation.Contains(location));
+                }
+                return View("PingLocationDetail");
+            }
+
         }
 
         public ActionResult Edit(int id)

@@ -57,6 +57,8 @@ namespace SharkTracker.Services
             }
         }
 
+        
+
         public LocationDetail GetLocationsById(int id)
         {
             using (var ctx = new ApplicationDbContext())

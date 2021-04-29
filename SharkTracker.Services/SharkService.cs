@@ -65,11 +65,11 @@ namespace SharkTracker.Services
         }
 
 
-        public IQueryable<Shark> GetSharksByName()
+        public IQueryable<Shark> GetSharksByName(string name)
         {
             using(var ctx = new ApplicationDbContext())
             {
-                var query = ctx.Shark.Where(e=> e.OwnerId == _userId)
+                var query = ctx.Shark.Where(e=> e.OwnerId == _userId && e.SharkName == name)
                     .Select(e=> new SharksNameSearch
                     {
                         SharkId = e.SharkId,

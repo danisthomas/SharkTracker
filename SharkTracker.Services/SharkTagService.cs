@@ -94,6 +94,31 @@ namespace SharkTracker.Services
            }
          }
 
+
+        public SharkTagDetail GetSharkTagByLocation(int id)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity = ctx.SharkTag.Single(e => e.LocationId == id && e.OwnerId == _userId);
+                return new SharkTagDetail
+                {
+                    SharkTagId = entity.SharkTagId,
+                    SharkId = entity.SharkId,
+                    SharkName = entity.shark.SharkName,
+                    TagId = entity.TagId,
+                    TagSerialNumber = entity.tag.TagSerialNumber,
+                    LocationId = entity.LocationId,
+                    TaggingLocation = entity.location.TaggingLocation,
+                    StartDate = entity.StartDate,
+                    EndDate = entity.EndDate
+
+                };
+
+            }
+        }
+
+        
+
         public bool UpdateSharkTag(SharkTagEdit model)
         {
             using (var ctx = new ApplicationDbContext())

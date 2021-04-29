@@ -38,7 +38,7 @@ namespace SharkTracker.WebMVC.Controllers
 
                 var userId = Guid.Parse(User.Identity.GetUserId());
                 var service = new SharkService(userId);
-                var model = service.GetSharksByName().FullTextSearchQuery(input);
+                var model = service.GetSharksByName(input).FullTextSearchQuery(input);
                 return View(model);
             }
             else

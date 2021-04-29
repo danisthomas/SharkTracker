@@ -67,6 +67,47 @@ namespace SharkTracker.Services
             }
         }
 
+        public PingDetail GetPingByPingLocation(string location)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var locations = from l in ctx.Ping select l;
+                
+                var entity = ctx.Ping.Single(e => e.PingLocation == location && e.OwnerId == _userId );
+                if (!string.IsNullOrWhiteSpace(location))
+                {
+                    locations = locations.Where(s => s.PingLocation.Contains(location));
+                }
+               
+                return
+                    new PingDetail
+                    {
+                        PingId = entity.PingId,
+                        PingDate = entity.PingDate,
+                        PingLocation = entity.PingLocation,
+                        SharkTagId = entity.SharkTagId,
+
+                    };
+            }
+        }
+
+        public PingDetail GetPingBySharkTagId(int id)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity = ctx.Ping.Single(e => e.SharkTagId == id && e.OwnerId == _userId);
+                return
+                    new PingDetail
+                    {
+                        PingId = entity.PingId,
+                        PingDate = entity.PingDate,
+                        PingLocation = entity.PingLocation,
+                        SharkTagId = entity.SharkTagId,
+
+                    };
+            }
+        }
+
         public bool UpdatePing(PingEdit model)
         {
             using(var ctx = new ApplicationDbContext())
