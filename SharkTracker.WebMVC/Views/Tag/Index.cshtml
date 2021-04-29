@@ -3,58 +3,67 @@
 @{
     ViewBag.Title = "Index";
 }
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<div class="jumbotron">
 
-<h2>Index</h2>
+    <h2>Tag Index</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-@if (TempData.ContainsKey("SaveResult"))
-{<div class="alert alert-success fade in" role="alert">
-        @ViewBag.SaveResult
-        <button type="button" class="close" data-dismiss="alert">
-            <span>&times;</span>
-        </button>
-        @TempData["SaveResult"]
-    </div>}
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.TagId)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.TagManufacturer)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.TagModel)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.TagSerialNumber)
-        </th>
-        <th></th>
-    </tr>
-
-    @foreach (var item in Model)
-    {
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    @if (TempData.ContainsKey("SaveResult"))
+    {<div class="alert alert-success fade in" role="alert">
+            @ViewBag.SaveResult
+            <button type="button" class="close" data-dismiss="alert">
+                <span>&times;</span>
+            </button>
+            @TempData["SaveResult"]
+        </div>}
+    <table class="table">
         <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.TagId)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.TagManufacturer)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.TagModel)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.TagSerialNumber)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new {id=item.TagId}) |
-                @Html.ActionLink("Details", "Details", new { id = item.TagId }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.TagId })
-            </td>
+            <th>
+                @Html.DisplayNameFor(model => model.TagId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TagManufacturer)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TagModel)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TagSerialNumber)
+            </th>
+            <th></th>
         </tr>
-    }
 
-</table>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TagId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TagManufacturer)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TagModel)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TagSerialNumber)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.TagId }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.TagId }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.TagId })
+                </td>
+            </tr>
+        }
+
+    </table>
+    </div>
