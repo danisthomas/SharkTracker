@@ -1,11 +1,10 @@
 ﻿body {
     padding-top: 100px;
     padding-bottom: 20px;
-   
+    
     background-size: cover;
     background-position: center top;
     background-repeat: no-repeat;
-    opacity: 0.5;
 }
 
 /* Set padding to keep content from hitting the edges */
