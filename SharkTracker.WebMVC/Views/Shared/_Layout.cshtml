@@ -19,17 +19,20 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
-
+                    @if (User.Identity.IsAuthenticated){
                     <a class="nav-link active" aria-current="page" href="/home">Home</a>
+
                     <a class="nav-link" href="/shark">Sharks</a>
 
                     <a class="nav-link" href="/tag">Tags</a>
 
                     <a class="nav-link" href="/ping">Pings</a>
                     <a class="nav-link" href="/location">Tagging Locations</a>
-                    <a class="nav-link" href="/sharktag">Shark Tagging</a>
+                    <a class="nav-link" href="/sharktag">Shark Tagging</a>}
                     <a class="nav-link" href="#">About</a>
                     <a class="nav-link" href="#">Contact</a>
+                    <a class="nav-link" href="#"></a>
+                    @Html.Partial("_LoginPartial")
                 </div>
             </div>
         </div>
