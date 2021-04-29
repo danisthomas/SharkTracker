@@ -1,11 +1,11 @@
 ﻿body {
     padding-top: 100px;
     padding-bottom: 20px;
-    background-image: url('Images2/Oceans.jpg');
+   
     background-size: cover;
     background-position: center top;
     background-repeat: no-repeat;
-  
+    opacity: 0.5;
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -27,4 +27,9 @@ select,
 textarea {
     max-width: 280px;
 }
-
+.ocean {
+    background-image: url('../Images/underwater-2615376_1920.jpg');
+    background-position: top;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
