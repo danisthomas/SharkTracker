@@ -10,6 +10,7 @@ namespace SharkTracker.Models
     public class LocationCreate
     {
        [Required]
+        [Display(Name = "Tagging Location")]
         public string TaggingLocation { get; set; }
     }
 }
