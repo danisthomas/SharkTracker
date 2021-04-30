@@ -30,9 +30,9 @@
             <th>
                 @Html.DisplayNameFor(model => model.SharkTagId)
             </th>
-            <th>
+            @*<th>
                 @Html.DisplayNameFor(model => model.SharkId)
-            </th>
+            </th>*@
             <th>
                 @Html.DisplayNameFor(model => model.SharkName)
             </th>
@@ -69,9 +69,9 @@
                 <td>
                     @Html.DisplayFor(modelItem => item.SharkTagId)
                 </td>
-                <td>
+                @*<td>
                     @Html.DisplayFor(modelItem => item.SharkId)
-                </td>
+                </td>*@
                 <td>
                     @Html.DisplayFor(modelItem => item.SharkName)
                 </td>
@@ -99,10 +99,21 @@
                 <td>
                     @Html.DisplayFor(modelItem => item.EndDate)
                 </td>
-                <td>
+                @*<td>
                     @Html.ActionLink("Edit", "Edit", new { id = item.SharkTagId }) |
                     @Html.ActionLink("Details", "Details", new { id = item.SharkTagId }) |
                     @Html.ActionLink("Delete", "Delete", new { id = item.SharkTagId })
+                </td>*@
+            </tr>
+            <tr>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.SharkTagId }) |
+                </td>
+                <td>
+                    @Html.ActionLink("Details", "Details", new { id = item.SharkTagId })|
+                </td>
+                <td>
+                    @Html.ActionLink("Delete", "Delete", new { id = item.SharkTagId }) |
                 </td>
             </tr>
         }

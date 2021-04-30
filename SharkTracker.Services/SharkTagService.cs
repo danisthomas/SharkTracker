@@ -46,7 +46,7 @@ namespace SharkTracker.Services
                     .Select(e => new SharkTagListItem
                     {
                         SharkTagId=e.SharkTagId,
-                        SharkId=e.SharkId,
+                       // SharkId=e.SharkId,
                         SharkName=e.shark.SharkName,
                         Species=e.shark.Species,
                         Sex=e.shark.Sex,

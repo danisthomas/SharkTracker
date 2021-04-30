@@ -11,6 +11,7 @@ namespace SharkTracker.Models
 {
     public class SharkTagListItem
     {
+        [Display(Name ="TaggingId")]
         public int SharkTagId { get; set; }
 
         [ForeignKey(nameof(shark))]

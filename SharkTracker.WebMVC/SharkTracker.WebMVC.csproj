@@ -253,7 +253,13 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Images\FreeGreatWhiteFront.jpg" />
     <Content Include="Images\freeworldmap.jpg" />
+    <Content Include="Images\Oceans.jpg" />
+    <Content Include="Images\ping map.jpg" />
+    <Content Include="Images\shark satellite tag.jpg" />
+    <Content Include="Images\sharktagging.jpg" />
+    <Content Include="Images\underwater-2615376_1920.jpg" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -277,6 +283,7 @@
     <Content Include="Content\bootstrap-reboot.css.map" />
     <Content Include="Content\bootstrap-grid.min.css.map" />
     <Content Include="Content\bootstrap-grid.css.map" />
+    <Content Include="Images\vector-world-map-isolated.webp" />
     <None Include="Properties\PublishProfiles\SharkTrackerWebMVC - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />

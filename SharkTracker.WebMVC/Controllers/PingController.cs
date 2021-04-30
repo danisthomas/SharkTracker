@@ -31,7 +31,7 @@ namespace SharkTracker.WebMVC.Controllers
         {
             var userId = Guid.Parse(User.Identity.GetUserId());
             var service = new SharkTagService(userId);
-            List<SharkTag> sharkTags = service.GetSharkTagsList().ToList();
+           List<SharkTag> sharkTags = service.GetSharkTagsList().ToList();
             
             var query = from s in sharkTags
                         select new SelectListItem()
