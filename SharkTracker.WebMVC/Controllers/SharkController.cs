@@ -16,34 +16,38 @@ namespace SharkTracker.WebMVC.Controllers
     public class SharkController : Controller
     {
         // GET: Shark
-        public ActionResult Index(SharkListItem input)
+        public ActionResult Index(SharkListItem name,string search)
         {
-            
+                
                 var userId = Guid.Parse(User.Identity.GetUserId());
                 var service = new SharkService(userId);
                 var model = service.GetSharks();
-
-
-                return View(model);
+            if (search!=null)
+            {
+               
+                return View(model.Where(x => x.SharkName.StartsWith(search) || search == null).ToList());
+            }
+            else
+            return View(model);
             
         }
 
-        [HttpPost]
+        //[HttpPost]
 
-        public ActionResult  Index(SharkListItem list , string input)
-        {
-            if (!string.IsNullOrEmpty(input))
-            {
+        //public ActionResult  Index(SharkListItem list , string input)
+        //{
+        //    if (!string.IsNullOrEmpty(input))
+        //    {
 
 
-                var userId = Guid.Parse(User.Identity.GetUserId());
-                var service = new SharkService(userId);
-                var model = service.GetSharksByName(input).FullTextSearchQuery(input);
-                return View(model);
-            }
-            else
-                return View(list);
-        }
+        //        var userId = Guid.Parse(User.Identity.GetUserId());
+        //        var service = new SharkService(userId);
+        //        var model = service.GetSharksByName(input).FullTextSearchQuery(input);
+        //        return View(model);
+        //    }
+        //    else
+        //        return View(list);
+        //}
         
 
         //Get

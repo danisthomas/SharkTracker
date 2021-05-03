@@ -44,6 +44,7 @@ namespace SharkTracker.Services
                         PingDate = e.PingDate,
                         PingLocation = e.PingLocation,
                         SharkTagId = e.SharkTagId,
+                        SharkName = e.sharkTag.shark.SharkName,
                         
                     });
                 return query.ToArray();

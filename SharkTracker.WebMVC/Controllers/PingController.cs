@@ -16,12 +16,18 @@ namespace SharkTracker.WebMVC.Controllers
     public class PingController : Controller
     {
         // GET: Ping
-        public ActionResult Index()
+        public ActionResult Index(PingListItem name, string search)
         {
             var userId = Guid.Parse(User.Identity.GetUserId());
             var service = new PingService(userId);
             var model = service.GetPings();
-            return View(model);
+            if (search != null)
+            {
+
+                return View(model.Where(x => x.PingLocation.StartsWith(search) || search == null).ToList());
+            }
+            else
+                return View(model);
         }
 
         

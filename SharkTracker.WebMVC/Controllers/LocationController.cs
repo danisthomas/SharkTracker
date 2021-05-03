@@ -12,12 +12,19 @@ namespace SharkTracker.WebMVC.Controllers
     public class LocationController : Controller
     {
         // GET: Location
-        public ActionResult Index()
+        public ActionResult Index(LocationListItem name,string search)
         {
             var userId = Guid.Parse(User.Identity.GetUserId());
             var service = new LocationService(userId);
             var model = service.GetLocations();
-            return View(model);
+
+            if (search != null)
+            {
+
+                return View(model.Where(x => x.TaggingLocation.StartsWith(search) || search == null).ToList());
+            }
+            else
+                return View(model);
         }
 
         public ActionResult Create()

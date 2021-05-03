@@ -5,17 +5,25 @@
 }
 <br />
 <br />
-<br />
-<br />
-<br />
-<br />
+<br /><br /><br />
+@using (Html.BeginForm("Index", "Location", FormMethod.Get))
+{
+    //the following are search options
+    @*<b> Search Option: < /b>@Html.RadioButton("option", "Name") <text>Name</text> @Html.RadioButton("option", "Gender") < text > Gender < /text>
+        @Html.RadioButton("option", "Species")<text>Species</text>*@ @Html.TextBox("search")
+        <input type="submit"
+               name="submit"
+               value="Search" />
+    }
+
 <br />
 <div class="jumbotron">
 
     <h2>Tagging Location Index</h2>
 
     <p>
-        @Html.ActionLink("Create New", "Create")
+        @Html.ActionLink("Create New", "Create")<br />
+        @Html.ActionLink("Return to List", "Index")
     </p>
     @if (TempData.ContainsKey("SaveResult"))
     {<div class="alert alert-success fade in" role="alert">
@@ -54,4 +62,4 @@
         }
 
     </table>
-    </div>
+</div>

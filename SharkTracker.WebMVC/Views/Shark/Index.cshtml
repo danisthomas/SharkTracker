@@ -18,26 +18,28 @@
         @TempData["SaveResult"]
     </div>}
 
+<br />
+<br />
+<br />
+<br />
+<br />
+
+
+@using (Html.BeginForm("Index", "Shark", FormMethod.Get))
+{
+    //the following are search options
+    @*<b> Search Option: < /b>@Html.RadioButton("option", "Name") <text>Name</text> @Html.RadioButton("option", "Gender") < text > Gender < /text>
+        @Html.RadioButton("option", "Species")<text>Species</text>*@ @Html.TextBox("search")
+        <input type="submit"
+               name="submit"
+               value="Search" />
+    }
 
 
 
 
-@*<form method="Post">
-        <div class="row-form-groups">
-            <div class="col-md-7">
-                <input asp-for="" class="form-control" id="TextSearchInput" placeholder="Enter text for full text search" />
-            </div>
-            <div class="col-md-5">
-                <button class="btn btn-success" id="ApplyTextSearchButton">Search</button>
-            </div>
-        </div>
-    </form>*@
 
-<br>
-<br>
-<br>
-<br>
-<br>
+
 <br>
 
 
@@ -45,7 +47,8 @@
     <h2> Shark Index</h2>
 
     <p>
-        @Html.ActionLink("Create New", "Create")
+        @Html.ActionLink("Create New", "Create")<br />
+        @Html.ActionLink("Return to List", "Index")
     </p>
 
     <table class="table">

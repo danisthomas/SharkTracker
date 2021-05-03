@@ -12,12 +12,26 @@ namespace SharkTracker.WebMVC.Controllers
     public class TagController : Controller
     {
         // GET: Tag
-        public ActionResult Index()
+        public ActionResult Index(TagListItem name, string search,string option)
         {
             var userId = Guid.Parse(User.Identity.GetUserId());
             var service = new TagService(userId);
             var model = service.GetTags();
-            return View(model);
+            if (option == "Manufacturer")
+
+            {
+
+                return View(model.Where(t => t.TagManufacturer.StartsWith(search) || search == null).ToList());
+            }
+            else if(option == "Model")
+            {
+                return View(model.Where(t => t.TagModel.StartsWith(search) || search == null).ToList());
+            }
+            else if(option == "SerialNumber")
+            {
+                return View(model.Where(t => t.TagSerialNumber.StartsWith(search) || search == null).ToList());
+            }
+                return View(model);
         }
 
         //Get
