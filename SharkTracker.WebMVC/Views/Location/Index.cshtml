@@ -19,7 +19,7 @@
 <br />
 <div class="jumbotron">
 
-    <h2>Tagging Location Index</h2>
+    @*<h2>Tagging Location Index</h2>*@
 
     <p>
         @Html.ActionLink("Create New", "Create")<br />
@@ -33,33 +33,34 @@
             </button>
             @TempData["SaveResult"]
         </div>}
-    <table class="table">
+<table class="table">
+    <caption>Location List</caption>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.LocationId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TaggingLocation)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
         <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.LocationId)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.TaggingLocation)
-            </th>
-            <th></th>
+            <td>
+                @Html.DisplayFor(modelItem => item.LocationId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TaggingLocation)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.LocationId }) |
+                @Html.ActionLink("Details", "Details", new { id = item.LocationId }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.LocationId })
+            </td>
         </tr>
+    }
 
-        @foreach (var item in Model)
-        {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.LocationId)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.TaggingLocation)
-                </td>
-                <td>
-                    @Html.ActionLink("Edit", "Edit", new { id = item.LocationId }) |
-                    @Html.ActionLink("Details", "Details", new { id = item.LocationId }) |
-                    @Html.ActionLink("Delete", "Delete", new { id = item.LocationId })
-                </td>
-            </tr>
-        }
-
-    </table>
+</table>
 </div>

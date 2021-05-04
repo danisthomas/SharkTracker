@@ -21,7 +21,7 @@
 <br />
 <div class="jumbotron">
 
-    <h2>Tag Index</h2>
+    @*<h2>Tag Index</h2>*@
 
     <p>
         @Html.ActionLink("Create New", "Create")<br />
@@ -36,6 +36,7 @@
             @TempData["SaveResult"]
         </div>}
     <table class="table">
+        <caption>Tag List</caption>
         <tr>
             <th>
                 @Html.DisplayNameFor(model => model.TagId)

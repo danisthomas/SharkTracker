@@ -29,7 +29,7 @@
 <br>
 <div class="jumbotron">
 
-    <h2> Ping Index</h2>
+    @*<h2> Ping Index</h2>*@
 
     <p>
         @Html.ActionLink("Create New", "Create")<br />
@@ -50,9 +50,10 @@
                 <input type="submit" value="Filter" />
             </p>
         </form>*@
-    <br />
+    
 
     <table class="table">
+        <caption>Ping List</caption>
         <tr>
             <th>
                 @Html.DisplayNameFor(model => model.PingId)

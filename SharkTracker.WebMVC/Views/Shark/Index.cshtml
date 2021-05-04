@@ -44,15 +44,17 @@
 
 
 <div class="jumbotron">
-    <h2> Shark Index</h2>
+    @*<h2> Shark Index</h2>*@
 
     <p>
         @Html.ActionLink("Create New", "Create")<br />
         @Html.ActionLink("Return to List", "Index")
     </p>
-
+    
     <table class="table">
+        <caption>Shark List</caption>
         <tr>
+
             <th>
                 @Html.DisplayNameFor(model => model.SharkId)
             </th>
@@ -78,37 +80,38 @@
             <th></th>
         </tr>
 
-        @foreach (var item in Model)
-        {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.SharkId)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.SharkName)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Species)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Length)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Weight)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Sex)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Age)
-                </td>
-                <td>
-                    @Html.ActionLink("Edit", "Edit", new { id = item.SharkId }) |
-                    @Html.ActionLink("Details", "Details", new { id = item.SharkId }) |
-                    @Html.ActionLink("Delete", "Delete", new { id = item.SharkId })
-                </td>
-            </tr>
-        }
-
+        
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.SharkId)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.SharkName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Species)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Length)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Weight)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Sex)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Age)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { id = item.SharkId }) |
+                        @Html.ActionLink("Details", "Details", new { id = item.SharkId }) |
+                        @Html.ActionLink("Delete", "Delete", new { id = item.SharkId })
+                    </td>
+                </tr>
+            }
+        
     </table>
 </div>

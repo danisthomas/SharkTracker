@@ -9,12 +9,12 @@ using System.Threading.Tasks;
 
 namespace SharkTracker.Models
 {
-    public class SharkTagListItem
+    public class SharkTagListItem 
     {
-        [Display(Name ="TaggingId")]
+        [Display(Name ="Tagging Id")]
         public int SharkTagId { get; set; }
 
-        [ForeignKey(nameof(shark))]
+        [ForeignKey(nameof(shark)),Display(Name ="Shark Id")]
         public int SharkId { get; set; }
         public virtual Shark shark { get; set; }
 
@@ -33,7 +33,7 @@ namespace SharkTracker.Models
         public Age Age { get; set; }
 
 
-        [ForeignKey(nameof(tag))]
+        [ForeignKey(nameof(tag)),Display(Name ="Tag Id")]
         public int TagId { get; set; }
         public virtual Tag tag { get; set; }
 
@@ -49,10 +49,10 @@ namespace SharkTracker.Models
         [Display(Name ="Tagging Location")]
         public string TaggingLocation { get; set; }
 
-        [Display(Name = "Date Tag was Placed")]
+        [Display(Name = "Tag Placed")]
         public DateTimeOffset StartDate { get; set; }
 
-        [Display(Name = "Date Tag was Removed or Lost")]
+        [Display(Name = "Tag Removed or Lost")]
         public DateTimeOffset? EndDate { get; set; }
 
 

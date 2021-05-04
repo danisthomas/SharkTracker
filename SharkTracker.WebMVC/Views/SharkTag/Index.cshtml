@@ -13,11 +13,9 @@
 <br />
 <div class="jumbotron">
 
-    <h2>Shark Tagging Index</h2>
+    @*<h2>Shark Tagging Index</h2>*@
 
-    <p>
-        @Html.ActionLink("Create New", "Create")
-    </p>
+
     @if (TempData.ContainsKey("SaveResult"))
     {<div class="alert alert-success fade in" role="alert">
             @ViewBag.SaveResult
@@ -26,7 +24,11 @@
             </button>
             @TempData["SaveResult"]
         </div>}
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
     <table class="table">
+        <caption>Shark Tagging List</caption>
         <tr>
             <th>
                 @Html.DisplayNameFor(model => model.SharkTagId)
@@ -37,12 +39,12 @@
             <th>
                 @Html.DisplayNameFor(model => model.SharkName)
             </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Length)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Weight)
-            </th>
+            @*<th>
+                    @Html.DisplayNameFor(model => model.Length)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Weight)
+                </th>*@
             <th>
                 @Html.DisplayNameFor(model => model.TagId)
             </th>
@@ -76,12 +78,12 @@
                 <td>
                     @Html.DisplayFor(modelItem => item.SharkName)
                 </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Length)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Weight)
-                </td>
+                @*<td>
+                        @Html.DisplayFor(modelItem => item.Length)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Weight)
+                    </td>*@
                 <td>
                     @Html.DisplayFor(modelItem => item.TagId)
                 </td>
@@ -100,23 +102,23 @@
                 <td>
                     @Html.DisplayFor(modelItem => item.EndDate)
                 </td>
-                @*<td>
-                        @Html.ActionLink("Edit", "Edit", new { id = item.SharkTagId }) |
-                        @Html.ActionLink("Details", "Details", new { id = item.SharkTagId }) |
-                        @Html.ActionLink("Delete", "Delete", new { id = item.SharkTagId })
-                    </td>*@
-            </tr>
-            <tr>
                 <td>
                     @Html.ActionLink("Edit", "Edit", new { id = item.SharkTagId }) |
-                </td>
-                <td>
-                    @Html.ActionLink("Details", "Details", new { id = item.SharkTagId })|
-                </td>
-                <td>
-                    @Html.ActionLink("Delete", "Delete", new { id = item.SharkTagId }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.SharkTagId }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.SharkTagId })
                 </td>
             </tr>
+            @*<tr>
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { id = item.SharkTagId }) |
+                    </td>
+                    <td>
+                        @Html.ActionLink("Details", "Details", new { id = item.SharkTagId })|
+                    </td>
+                    <td>
+                        @Html.ActionLink("Delete", "Delete", new { id = item.SharkTagId }) |
+                    </td>
+                </tr>*@
         }
 
     </table>
