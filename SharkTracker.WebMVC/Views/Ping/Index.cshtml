@@ -9,32 +9,23 @@
 <br />
 <br />
 
-
-@using (Html.BeginForm("Index", "Ping", FormMethod.Get))
-{
-    //the following are search options
-    @*<b> Search Option: < /b>@Html.RadioButton("option", "Name") <text>Name</text> @Html.RadioButton("option", "Gender") < text > Gender < /text>
-        @Html.RadioButton("option", "Species")<text>Species</text>*@ <label>Ping Location</label> @Html.TextBox("search")
-
-        <input type="submit"
-               name="submit"
-               value="Search" />
-    }
+<div class="lbanner"><h2>Ping List</h2></div>
 
 
 
 
 
 
-<br>
+
 <div class="jumbotron">
 
     @*<h2> Ping Index</h2>*@
 
     <p>
-        @Html.ActionLink("Create New", "Create")<br />
+        @Html.ActionLink("Create New", "Create") &nbsp;&nbsp;
         @Html.ActionLink("Return to List", "Index")
     </p>
+    <hr />
     @if (TempData.ContainsKey("SaveResult"))
     {<div class="alert alert-success fade in" role="alert">
             @ViewBag.SaveResult
@@ -50,10 +41,20 @@
                 <input type="submit" value="Filter" />
             </p>
         </form>*@
-    
 
+    @using (Html.BeginForm("Index", "Ping", FormMethod.Get))
+    {
+        //the following are search options
+        @*<b> Search Option: < /b>@Html.RadioButton("option", "Name") <text>Name</text> @Html.RadioButton("option", "Gender") < text > Gender < /text>
+            @Html.RadioButton("option", "Species")<text>Species</text>*@ <label>Ping Location</label> @Html.TextBox("search")
+
+            <input type="submit"
+                   name="submit"
+                   value="Search" />
+        }
+<br />
     <table class="table">
-        <caption>Ping List</caption>
+        @*<caption>Ping List</caption>*@
         <tr>
             <th>
                 @Html.DisplayNameFor(model => model.PingId)

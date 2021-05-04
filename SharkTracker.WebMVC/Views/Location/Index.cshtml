@@ -6,25 +6,18 @@
 <br />
 <br />
 <br /><br /><br />
-@using (Html.BeginForm("Index", "Location", FormMethod.Get))
-{
-    //the following are search options
-    @*<b> Search Option: < /b>@Html.RadioButton("option", "Name") <text>Name</text> @Html.RadioButton("option", "Gender") < text > Gender < /text>
-        @Html.RadioButton("option", "Species")<text>Species</text>*@ <label>Tagging Location</label>@Html.TextBox("search")
-        <input type="submit"
-               name="submit"
-               value="Search"/>
-    }
+            <div class="lbanner"><h2>Location List</h2></div>
 
-<br />
+
 <div class="jumbotron">
 
     @*<h2>Tagging Location Index</h2>*@
 
     <p>
-        @Html.ActionLink("Create New", "Create")<br />
+        @Html.ActionLink("Create New", "Create") &nbsp;&nbsp;
         @Html.ActionLink("Return to List", "Index")
     </p>
+    <hr />
     @if (TempData.ContainsKey("SaveResult"))
     {<div class="alert alert-success fade in" role="alert">
             @ViewBag.SaveResult
@@ -33,34 +26,44 @@
             </button>
             @TempData["SaveResult"]
         </div>}
-<table class="table">
-    <caption>Location List</caption>
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.LocationId)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.TaggingLocation)
-        </th>
-        <th></th>
-    </tr>
-
-    @foreach (var item in Model)
+    @using (Html.BeginForm("Index", "Location", FormMethod.Get))
     {
+        //the following are search options
+        @*<b> Search Option: < /b>@Html.RadioButton("option", "Name") <text>Name</text> @Html.RadioButton("option", "Gender") < text > Gender < /text>
+            @Html.RadioButton("option", "Species")<text>Species</text>*@ <label>Tagging Location</label>@Html.TextBox("search")
+            <input type="submit"
+                   name="submit"
+                   value="Search" />
+        }
+    <br />
+    <table class="table">
+        @*<caption>Location List</caption>*@
         <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.LocationId)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.TaggingLocation)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.LocationId }) |
-                @Html.ActionLink("Details", "Details", new { id = item.LocationId }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.LocationId })
-            </td>
+            <th>
+                @Html.DisplayNameFor(model => model.LocationId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TaggingLocation)
+            </th>
+            <th></th>
         </tr>
-    }
 
-</table>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LocationId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TaggingLocation)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.LocationId }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.LocationId }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.LocationId })
+                </td>
+            </tr>
+        }
+
+    </table>
 </div>

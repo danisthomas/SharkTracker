@@ -25,34 +25,36 @@
 <br />
 
 
-@using (Html.BeginForm("Index", "Shark", FormMethod.Get))
- {
-    //the following are search options
-    @*<b> Search Option: < /b>@Html.RadioButton("option", "Name") <text>Name</text> @Html.RadioButton("option", "Gender") < text > Gender < /text>
-        @Html.RadioButton("option", "Species")<text>Species</text>*@ <label>Shark Name </label> @Html.TextBox("search")
-        <input type="submit"
-               name="submit"
-               value="Search"/>
- }
 
 
 
 
 
 
-<br>
 
-
+<div class="lbanner"><h2>Shark List</h2></div>
 <div class="jumbotron">
     @*<h2> Shark Index</h2>*@
-
     <p>
-        @Html.ActionLink("Create New", "Create")<br />
+        @Html.ActionLink("Create New", "Create") &nbsp;&nbsp;
+
         @Html.ActionLink("Return to List", "Index")
     </p>
-    
+    <hr />
+    @using (Html.BeginForm("Index", "Shark", FormMethod.Get))
+    {
+        //the following are search options
+        @*<b> Search Option: < /b>@Html.RadioButton("option", "Name") <text>Name</text> @Html.RadioButton("option", "Gender") < text > Gender < /text>
+            @Html.RadioButton("option", "Species")<text>Species</text>*@ <label>Shark Name </label> @Html.TextBox("search")
+            <input type="submit"
+                   name="submit"
+                   value="Search" />
+        }
+
+
+
     <table class="table">
-        <caption>Shark List</caption>
+        @*<caption>Shark List</caption>*@
         <tr>
 
             <th>
@@ -80,38 +82,38 @@
             <th></th>
         </tr>
 
-        
-            @foreach (var item in Model)
-            {
-                <tr>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.SharkId)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.SharkName)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Species)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Length)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Weight)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Sex)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Age)
-                    </td>
-                    <td>
-                        @Html.ActionLink("Edit", "Edit", new { id = item.SharkId }) |
-                        @Html.ActionLink("Details", "Details", new { id = item.SharkId }) |
-                        @Html.ActionLink("Delete", "Delete", new { id = item.SharkId })
-                    </td>
-                </tr>
-            }
-        
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SharkId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SharkName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Species)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Length)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Weight)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Sex)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Age)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.SharkId }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.SharkId }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.SharkId })
+                </td>
+            </tr>
+        }
+
     </table>
 </div>

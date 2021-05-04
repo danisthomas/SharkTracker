@@ -72,3 +72,84 @@ caption {
 h3{
     color: red;
 }
+.banner {
+    position: relative;
+    height: 300px;
+    background-image: url('../Images/landscape-seashells-tropical-beach-summer-holiday-55246816.jpg');
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-radius: 10px;
+}
+
+    .banner::after {
+        content: "";
+        background-color: rgba(0, 0, 0, 0.2);
+        position: absolute;
+        width: 100%;
+        height: 100%;
+    }
+    footer{
+        color: white;
+    }
+.ebanner {
+    position: relative;
+    height: 300px;
+    background-image: url('../Images/seaview-sunset-amazing-landscape-beautiful-beach-panorama-seaview-sunset-amazing-landscape-beautiful-beach-mauritius-126387682.jpg');
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-radius: 10px;
+}
+.ebanner::after {
+    content: "";
+    background-color: rgba(0, 0, 0, 0.2);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+.lbanner {
+    position: relative;
+    height: 300px;
+    background-image: url('../Images/sunset-over-sea-amazing-landscape-panorama-sunset-over-sea-amazing-landscape-sri-lanka-panorama-119208845.jpg');
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-radius: 10px;
+    color: white;
+   
+}
+
+    .lbanner::after {
+        content: "";
+        background-color: rgba(0, 0, 0, 0.2);
+        position: absolute;
+        width: 100%;
+        height: 100%;
+    }
+.dbanner {
+    position: relative;
+    height: 300px;
+    background-image: url('../Images/sunset-sunrise-landscape-panorama-beautiful-nature-beach-colorful-red-orange-purple-clouds-reflected-ocean-49632998.jpg');
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-radius: 10px;
+}
+
+    .dbanner::after {
+        content: "";
+        background-color: rgba(0, 0, 0, 0.2);
+        position: absolute;
+        width: 100%;
+        height: 100%;
+    }
+      

@@ -5,14 +5,12 @@
 }
 <br />
 <br />
+
 <br />
-<br />
-<br />
-<br />
-<br />
+<div class="ebanner"><h2>Shark Tagging Edit</h2></div>
 <div class="jumbotron">
 
-    <h2>Shark Tagging Edit</h2>
+    
 
 
     @using (Html.BeginForm())
@@ -21,7 +19,7 @@
 
         <div class="form-horizontal">
             @*<h4>SharkTagEdit</h4>*@
-            <hr />
+            @*<hr />*@
             @Html.ValidationSummary(true, "", new { @class = "text-danger" })
             @Html.HiddenFor(model => model.SharkTagId)
 

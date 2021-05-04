@@ -8,25 +8,13 @@
 <br />
 <br />
 <br />
-@using (Html.BeginForm("Index", "Tag", FormMethod.Get))
-{
-    //the following are search options
-    <b> Search Option: </b>@Html.RadioButton("option", "Manufacturer") <text>Manufacturer</text> @Html.RadioButton("option", "Model") <text> Model </text>
-        @Html.RadioButton("option", "SerialNumber")<text>Serial Number</text> @Html.TextBox("search")
-        <input type="submit"
-               name="submit"
-               value="Search"/>
-    }
-
-<br />
+<div class="lbanner"><h2>Tag List</h2></div>
 <div class="jumbotron">
-
-    @*<h2>Tag Index</h2>*@
-
     <p>
-        @Html.ActionLink("Create New", "Create")<br />
+        @Html.ActionLink("Create New", "Create") &nbsp;&nbsp;
         @Html.ActionLink("Return to List", "Index")
     </p>
+    <hr />
     @if (TempData.ContainsKey("SaveResult"))
     {<div class="alert alert-success fade in" role="alert">
             @ViewBag.SaveResult
@@ -35,8 +23,18 @@
             </button>
             @TempData["SaveResult"]
         </div>}
+    @using (Html.BeginForm("Index", "Tag", FormMethod.Get))
+    {
+        //the following are search options
+        <b> Search Option: </b>@Html.RadioButton("option", "Manufacturer") <text>Manufacturer</text> @Html.RadioButton("option", "Model") <text> Model </text>
+        @Html.RadioButton("option", "SerialNumber")<text>Serial Number</text> @Html.TextBox("search")
+        <input type="submit"
+               name="submit"
+               value="Search" />
+    }
+    <br />
     <table class="table">
-        <caption>Tag List</caption>
+        @*<caption>Tag List</caption>*@
         <tr>
             <th>
                 @Html.DisplayNameFor(model => model.TagId)

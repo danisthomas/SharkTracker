@@ -255,10 +255,14 @@
     <Content Include="Content\Site.css" />
     <Content Include="Images\FreeGreatWhiteFront.jpg" />
     <Content Include="Images\freeworldmap.jpg" />
+    <Content Include="Images\landscape-seashells-tropical-beach-summer-holiday-55246816.jpg" />
     <Content Include="Images\Oceans.jpg" />
     <Content Include="Images\ping map.jpg" />
+    <Content Include="Images\seaview-sunset-amazing-landscape-beautiful-beach-panorama-seaview-sunset-amazing-landscape-beautiful-beach-mauritius-126387682.jpg" />
     <Content Include="Images\shark satellite tag.jpg" />
     <Content Include="Images\sharktagging.jpg" />
+    <Content Include="Images\sunset-over-sea-amazing-landscape-panorama-sunset-over-sea-amazing-landscape-sri-lanka-panorama-119208845.jpg" />
+    <Content Include="Images\sunset-sunrise-landscape-panorama-beautiful-nature-beach-colorful-red-orange-purple-clouds-reflected-ocean-49632998.jpg" />
     <Content Include="Images\underwater-2615376_1920.jpg" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />

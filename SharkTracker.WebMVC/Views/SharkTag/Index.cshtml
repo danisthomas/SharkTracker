@@ -11,9 +11,10 @@
 
 
 <br />
+<div class="lbanner"><h2>Shark Tagging List</h2></div>
 <div class="jumbotron">
 
-    @*<h2>Shark Tagging Index</h2>*@
+    @**@
 
 
     @if (TempData.ContainsKey("SaveResult"))
@@ -28,7 +29,7 @@
         @Html.ActionLink("Create New", "Create")
     </p>
     <table class="table">
-        <caption>Shark Tagging List</caption>
+        @*<caption>Shark Tagging List</caption>*@
         <tr>
             <th>
                 @Html.DisplayNameFor(model => model.SharkTagId)
