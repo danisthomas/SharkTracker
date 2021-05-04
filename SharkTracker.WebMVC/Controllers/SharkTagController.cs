@@ -18,6 +18,7 @@ namespace SharkTracker.WebMVC.Controllers
             var userId = Guid.Parse(User.Identity.GetUserId());
             var service = new SharkTagService(userId);
             var model = service.GetSharkTags();
+           
             return View(model);
         }
 

@@ -26,14 +26,14 @@
 
 
 @using (Html.BeginForm("Index", "Shark", FormMethod.Get))
-{
+ {
     //the following are search options
     @*<b> Search Option: < /b>@Html.RadioButton("option", "Name") <text>Name</text> @Html.RadioButton("option", "Gender") < text > Gender < /text>
-        @Html.RadioButton("option", "Species")<text>Species</text>*@ @Html.TextBox("search")
+        @Html.RadioButton("option", "Species")<text>Species</text>*@ <label>Shark Name </label> @Html.TextBox("search")
         <input type="submit"
                name="submit"
-               value="Search" />
-    }
+               value="Search"/>
+ }
 
 
 
