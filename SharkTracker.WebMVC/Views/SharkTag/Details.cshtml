@@ -10,89 +10,92 @@
 <br />
 <br />
 <br />
+<br />
+<br />
 <div class="lbanner"><h2>Shark Tagging Details</h2></div>
 <div class="jumbotron">
 
 
-<div>
-    @*<h4>SharkTagDetail</h4>*@
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.SharkTagId)
-        </dt>
+    <div>
+        @*<h4>SharkTagDetail</h4>*@
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.SharkTagId)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.SharkTagId)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.SharkTagId)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.SharkId)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.SharkId)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.SharkId)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.SharkId)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.SharkName)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.SharkName)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.SharkName)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.SharkName)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.TagId)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.TagId)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.TagId)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.TagId)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.TagSerialNumber)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.TagSerialNumber)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.TagSerialNumber)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.TagSerialNumber)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.LocationId)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.LocationId)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.LocationId)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.LocationId)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.TaggingLocation)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.TaggingLocation)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.TaggingLocation)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.TaggingLocation)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.StartDate)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.StartDate)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.StartDate)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.StartDate)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.EndDate)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.EndDate)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.EndDate)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.EndDate)
+            </dd>
 
-    </dl>
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.SharkTagId }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.SharkTagId }) |
-    @Html.ActionLink("Back to List", "Index")
-</p></div>

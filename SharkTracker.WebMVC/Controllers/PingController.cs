@@ -76,7 +76,7 @@ namespace SharkTracker.WebMVC.Controllers
             return service;
         }
 
-        public ActionResult Detail(int id)
+        public ActionResult Details(int id)
         {
             var svc = CreatePingService();
             var model = svc.GetPingById(id);
@@ -84,23 +84,23 @@ namespace SharkTracker.WebMVC.Controllers
             return View(model);
         }
 
-        [Route("Ping/Location")]
-        public ViewResult PingLocationDetail(string location)
-        {
-            using (var ctx = new ApplicationDbContext())
-            {
-                var svc = CreatePingService();
-                var model = svc.GetPingByPingLocation(location);
+        //[Route("Ping/Location")]
+        //public ViewResult PingLocationDetail(string location)
+        //{
+        //    using (var ctx = new ApplicationDbContext())
+        //    {
+        //        var svc = CreatePingService();
+        //        var model = svc.GetPingByPingLocation(location);
 
-                var locations = from l in ctx.Ping select l;
-                if (!string.IsNullOrWhiteSpace(location))
-                {
-                    locations = locations.Where(l => l.PingLocation.Contains(location));
-                }
-                return View("PingLocationDetail");
-            }
+        //        var locations = from l in ctx.Ping select l;
+        //        if (!string.IsNullOrWhiteSpace(location))
+        //        {
+        //            locations = locations.Where(l => l.PingLocation.Contains(location));
+        //        }
+        //        return View("PingLocationDetail");
+        //    }
 
-        }
+        //}
 
         public ActionResult Edit(int id)
         {

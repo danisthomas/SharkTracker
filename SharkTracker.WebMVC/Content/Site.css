@@ -72,6 +72,10 @@ caption {
 h3{
     color: red;
 }
+nav a{
+    color: #d3eaea;
+}
+
 .banner {
     position: relative;
     height: 300px;

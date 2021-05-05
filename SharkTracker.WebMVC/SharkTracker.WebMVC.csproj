@@ -422,14 +422,13 @@
     <Content Include="Views\Location\Delete.cshtml" />
     <Content Include="Views\Ping\Index.cshtml" />
     <Content Include="Views\Ping\Create.cshtml" />
-    <Content Include="Views\Ping\Detail.cshtml" />
+    <Content Include="Views\Ping\Details1.cshtml" />
     <Content Include="Views\Ping\Edit.cshtml" />
     <Content Include="Views\Ping\Delete.cshtml" />
     <Content Include="Views\Tag\Index.cshtml" />
     <Content Include="Views\Tag\Create.cshtml" />
     <Content Include="Views\Tag\Details.cshtml" />
     <Content Include="Views\Tag\Edit.cshtml" />
-    <Content Include="Views\Tag\Delete.cshtml" />
     <Content Include="Views\Shark\NameDetails.cshtml" />
     <Content Include="Views\Shark\SharkByName.cshtml" />
     <Content Include="Views\Ping\PingLocationDetail.cshtml" />
@@ -443,6 +442,8 @@
     <Content Include="Scripts\popper.js.map" />
     <Content Include="Scripts\popper-utils.min.js.map" />
     <Content Include="Scripts\popper-utils.js.map" />
+    <Content Include="Views\Tag\Delete.cshtml" />
+    <Content Include="Views\Ping\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
