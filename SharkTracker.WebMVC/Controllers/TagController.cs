@@ -21,15 +21,15 @@ namespace SharkTracker.WebMVC.Controllers
 
             {
 
-                return View(model.Where(t => t.TagManufacturer.StartsWith(search) || search == null).ToList());
+                return View(model.Where(t => t.TagManufacturer.StartsWith(search, StringComparison.OrdinalIgnoreCase) || search == null).ToList());
             }
             else if(option == "Model")
             {
-                return View(model.Where(t => t.TagModel.StartsWith(search) || search == null).ToList());
+                return View(model.Where(t => t.TagModel.StartsWith(search, StringComparison.OrdinalIgnoreCase) || search == null).ToList());
             }
             else if(option == "SerialNumber")
             {
-                return View(model.Where(t => t.TagSerialNumber.StartsWith(search) || search == null).ToList());
+                return View(model.Where(t => t.TagSerialNumber.StartsWith(search, StringComparison.OrdinalIgnoreCase) || search == null).ToList());
             }
                 return View(model);
         }

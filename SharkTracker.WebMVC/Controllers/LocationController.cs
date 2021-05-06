@@ -21,7 +21,7 @@ namespace SharkTracker.WebMVC.Controllers
             if (search != null)
             {
 
-                return View(model.Where(x => x.TaggingLocation.StartsWith(search) || search == null).ToList());
+                return View(model.Where(x => x.TaggingLocation.StartsWith(search, StringComparison.OrdinalIgnoreCase) || search == null).ToList());
             }
             else
                 return View(model);
