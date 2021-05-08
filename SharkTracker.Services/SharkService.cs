@@ -60,7 +60,9 @@ namespace SharkTracker.Services
         {
             using (var ctx = new ApplicationDbContext())
             {
-                return ctx.Shark.ToList();
+                var query = ctx.Shark.Where(e => e.OwnerId == _userId);
+
+                return query.ToList();
             }
         }
 

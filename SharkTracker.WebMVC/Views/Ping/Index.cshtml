@@ -91,7 +91,12 @@
                     @Html.DisplayFor(modelItem => item.SharkName)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.PingDate)
+                    @{
+                        var newStart = item.PingDate.Date.ToShortDateString();
+                        
+                        
+                    }
+                    @Html.DisplayFor(modelItem => newStart)
                 </td>
                 <td>
                     @Html.ActionLink("Edit", "Edit", new { id = item.PingId }) |

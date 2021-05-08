@@ -7,7 +7,7 @@
 
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
-    
+
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: #0c5b8f">
@@ -20,25 +20,32 @@
                 <div class="navbar-nav">
                     @if (User.Identity.IsAuthenticated)
                     {
-                        <a class="nav-link active" aria-current="page" href="/home">Home</a>
-
-                        <a class="nav-link" href="/shark">Sharks</a>
+                        @*<a class="nav-link active" aria-current="page" href="/home">Home</a>*@
+                        @Html.ActionLink("Home", "Index", "Home", new { area = "" }, new { @class = "nav-link active", aria_current = "page" })
+                        @Html.ActionLink("Sharks", "Index", "Shark", new { area = "" }, new { @class = "nav-link" })
+                        @Html.ActionLink("Tags", "Index", "Tag", new { area = "" }, new { @class = "nav-link" })
+                        @Html.ActionLink("Tagging Locations", "Index", "Location", new { area = "" }, new { @class = "nav-link" })
+                        @Html.ActionLink("Shark Tagging", "Index", "SharkTag", new { area = "" }, new { @class = "nav-link" })
+                        @Html.ActionLink("Pings", "Index", "Ping", new { area = "" }, new { @class = "nav-link" })
+                        @*<a class="nav-link" href="/shark">Sharks</a>
 
                         <a class="nav-link" href="/tag">Tags</a>
                         <a class="nav-link" href="/location">Tagging Locations</a>
                         <a class="nav-link" href="/sharktag">Shark Tagging</a>
-                        <a class="nav-link" href="/ping">Pings</a>
+                        <a class="nav-link" href="/ping">Pings</a>*@
                     }
 
-                    <a class="nav-link" href="home/about">About</a>
-                    <a class="nav-link" href="home/contact">Contact</a>
-                    <a class="nav-link" href="#"></a>
-                    <a class="nav-link" href="#"></a>
+                    @*<a class="nav-link" href="home/about">About</a>
+        <a class="nav-link" href="home/contact">Contact</a>*@
+                    @Html.ActionLink("About", "About", "Home", new { area = "" }, new { @class = "nav-link" })
+                    @Html.ActionLink("Contact", "Contact", "Home", new { area = "" }, new { @class = "nav-link" })
+                    @*<a class="nav-link" href="#"></a>
+                    <a class="nav-link" href="#"></a>*@
                 </div>
             </div>
-                    <a class="d-flex"> @Html.Partial("_LoginPartial")</a>
-                
-            
+            <a class="d-flex"> @Html.Partial("_LoginPartial")</a>
+
+
         </div>
     </nav>
     @*<div class="sticky-top">*@

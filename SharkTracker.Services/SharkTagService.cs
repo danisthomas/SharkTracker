@@ -68,8 +68,10 @@ namespace SharkTracker.Services
         {
             using (var ctx = new ApplicationDbContext())
             {
-                
-                return ctx.SharkTag.ToList();
+
+                var query = ctx.SharkTag.Where(e => e.OwnerId == _userId);
+
+                return query.ToList();
             }
         }
         public SharkTagDetail GetSharkTagById(int id)
